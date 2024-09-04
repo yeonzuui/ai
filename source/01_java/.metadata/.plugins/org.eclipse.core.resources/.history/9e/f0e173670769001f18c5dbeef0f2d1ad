@@ -1,0 +1,19 @@
+package com.lec.method;
+// 수학적 method만 모아놓은 class => Arithmetic
+public class ArPractice {
+	
+	// method 1) abs(절댓값; absolute value)
+	public static int abs(int value) {
+		int result = (value >= 0) ? value : -value;
+		return result;
+	}
+	
+	// method 2) sum / overloading(과적)
+	// sum 1) from-to까지의 누적합을 return하는 method 
+	public int sum(int from, int to) {
+		int sum = 0; // 누적변수
+		for (int i= from ; i <= to; i++) {
+			sum += i ;
+		}
+	}
+} // class

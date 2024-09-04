@@ -1,0 +1,7 @@
+package com_lec.ex;
+
+public class Ex01 {
+	public static void main(String[] args) {
+		int i = 10; // 변수의 선언과 초기화 한번에(ch02 Ex04참고)
+	}
+}

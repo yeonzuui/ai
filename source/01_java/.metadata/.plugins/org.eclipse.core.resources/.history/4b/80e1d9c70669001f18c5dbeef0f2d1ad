@@ -1,0 +1,14 @@
+package com.lec.method;
+// 수학적 method만 모아놓은 class => Arithmetic
+public class ArPractice {
+	// method 1: abs(절댓값; absolute value)
+	public static int abs(int value) {
+		int result = (value >= 0) ? value : -value;
+		return result;
+	}
+	
+	// method 2) sum / overloading(과적)
+	// static 안 씀 → 다른 class에서 객체 만들고 할당해서 사용해야 함
+	// static은 나중에 파이썬 이미지 학습에서 사용해야 함
+	// 귀찮지만 사용해야 하는 상황이 있음  
+	public int sum()

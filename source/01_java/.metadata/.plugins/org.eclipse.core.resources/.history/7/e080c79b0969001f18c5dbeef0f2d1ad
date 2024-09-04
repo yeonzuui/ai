@@ -1,0 +1,11 @@
+package com.lec.ex1_car;
+
+public class CarPractice {
+	
+	// 속성(데이터)
+	private String color;
+	private int    cc;
+	private int    speed;
+	
+	
+}

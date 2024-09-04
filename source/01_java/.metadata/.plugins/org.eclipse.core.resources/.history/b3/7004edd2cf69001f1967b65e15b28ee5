@@ -1,0 +1,9 @@
+package com.lec.ex5_final;
+// final 변수 : 수정 불가
+public class FinalTestMain {
+	public static void main(String[] args) {
+		double r = 3.0;
+		double area = r * r * 3.141592;
+	}
+
+}

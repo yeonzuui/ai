@@ -1,0 +1,5 @@
+package constant;
+// 특정 상수를 모두에게 공유할 때
+public class Constant {
+	public static final double PI = 3.141592;
+}

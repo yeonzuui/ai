@@ -1,0 +1,14 @@
+package com.lec.ex1_student;
+// 데이터 : name(String), kor(int), eng(int), mat(int), tot(int), avg(double;소수점)
+// 생성자 : new Student("정우성", 90, 90, 90)
+// method : inforPrint(), inforString()
+public class Student {
+	// 데이터(속성, 인스턴스변수)
+	private String  name;
+	private int     kor;
+	private int 	eng;
+	private int		mat;
+	private int 	tot;
+	private double	avg;
+	
+}

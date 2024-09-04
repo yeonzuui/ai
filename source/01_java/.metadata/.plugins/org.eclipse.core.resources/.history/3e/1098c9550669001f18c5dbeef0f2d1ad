@@ -1,0 +1,9 @@
+package com.lec.method;
+// 수학적 method만 모아놓은 class => Arithmetic
+public class ArPractice {
+	// method 1) abs
+	public static int abs(int value) {
+		int result = (value >= 0) ? value : -value;
+		return result;
+	}
+}

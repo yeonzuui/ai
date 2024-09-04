@@ -1,0 +1,9 @@
+package com.lec.ex4_account;
+
+public class AccountTestMain {
+	public static void main(String[] args) {
+		Account hong = new Account();
+		hong.setAccountNo("100-1");              // setAccountNo > 가져오기
+		System.out.println(hong.getAccountNo()); // getAccountNo > 출력하기
+	} // 
+} // class

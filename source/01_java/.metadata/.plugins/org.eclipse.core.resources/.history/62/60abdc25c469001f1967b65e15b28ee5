@@ -1,0 +1,10 @@
+package com.lec.ex3_static;
+// new Child("첫째")
+public class Child {
+	private String name;
+	Mom mom;
+	public Child(String name) {
+		this.name = name;
+	}
+	
+}

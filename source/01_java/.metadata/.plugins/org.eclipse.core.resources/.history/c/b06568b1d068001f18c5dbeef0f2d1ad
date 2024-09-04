@@ -1,0 +1,5 @@
+package com.lec.method;
+// sum(10, 100)
+public class Arithmetic {
+
+}

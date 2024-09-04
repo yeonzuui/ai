@@ -1,0 +1,11 @@
+package com_lec.ex;
+
+public class Ex02arrayPrint {
+	public static void main(String[] args) {
+		int[] arr = { 0, 0, 0 };
+		// 확장 for
+		for(int a : arr) {
+			
+		}
+	}
+}

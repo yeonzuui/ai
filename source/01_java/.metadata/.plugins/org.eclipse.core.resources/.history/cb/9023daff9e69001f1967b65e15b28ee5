@@ -1,0 +1,19 @@
+package com.lec.ex5_person;
+// 데이터: name, age, gender, birth(String → 13장 수업후에는 Date형)
+// 생성자 : new PersonInfo("홍길동", 22, '남', "2001-12-01") - overloading
+// 메소드 : print() 
+public class PersonInfo {
+	// 데이터(속성)
+	private String name;
+	private int    age;
+	private char   gender; // 문자 하나
+	private String birth;
+	
+	// 생성자 함수
+	public PersonInfo() {}
+	public PersonInfo(String name, int age, char gender) {
+		this.name   = name;
+		this.age    = age;
+		this.gender = gender;
+	}
+}

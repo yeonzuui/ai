@@ -1,0 +1,11 @@
+package com.lec.loop;
+	
+public class Ex11doWhile {
+	public static void main(String[] args) {
+	} //main
+} //class
+
+//		do {
+//			System.out.println("안녕");
+//		} while (true);
+//		System.out.println("bye"); //Unreachable code- 위에서 오류나서 도달못한거

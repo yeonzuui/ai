@@ -1,0 +1,18 @@
+package com_lec.ex;
+
+public class Ex04_arrayCopy {
+	public static void main(String[] args) {
+		int[] score = { 100, 20, 30, 40, 50 };
+		int[] s = new int[score.length]; // new 청소	
+		for (int idx = 0; idx < s.length; idx++) {
+			s[idx]=score[idx];
+		}
+		for (int idx = 0; idx < score.length; idx++) {
+			System.out.printf("score[%d]=%d \t s[%d]=%d\n", idx, score[idx], idx, s[idx]);
+		}
+		s[0]=99; //s 0번째 인덱스만 변경
+		for (int idx = 0; idx < score.length; idx++) {
+			System.out.printf("score[%d]=%d \t s[%d]=%d\n", idx, score[idx], idx, s[idx]);
+		}
+	} //main
+} //class

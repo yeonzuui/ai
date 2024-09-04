@@ -1,0 +1,5 @@
+package com.lec.ex1_car;
+// class: 속성(데이터=인스턴스변수0
+public class Car {
+
+}

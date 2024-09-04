@@ -1,0 +1,8 @@
+package com.lec.ex3_access;
+
+public class AccessTestMain {
+	public static void main(String[] args) {
+		AccessTest obj = new AccessTest();
+		
+	}
+}

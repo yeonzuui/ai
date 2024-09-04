@@ -1,0 +1,7 @@
+package com.lec.ex4_product;
+
+public class ProductTestMain {
+	public static void main(String[] args) {
+		System.out.println(Product.count);
+	}
+}

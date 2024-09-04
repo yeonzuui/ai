@@ -1,0 +1,5 @@
+package com.lec.ex;
+// return이 없는 메소드의 타입은 void
+public class Ex04_void {
+
+}

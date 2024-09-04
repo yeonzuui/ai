@@ -1,0 +1,12 @@
+package com_lec.ex;
+
+public class Ex04_arrayCopy {
+	public static void main(String[] args) {
+		int[]score= {100,20,30, 40,50};
+		int[]s=new int[score.length];
+		for (int idx=0; idx<s.length; idx++) {
+			
+		}
+		System.out.println();
+	}
+}

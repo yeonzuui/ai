@@ -1,0 +1,7 @@
+package com.lec.ex4_product;
+// new Product("S22") a101 a102 a103 a104....(=시리얼 넘버)
+public class Product {
+	// 데이터(인스턴스 변수)
+	private String modelNo; // 모델명
+	private int    serialNo; // 객체 고유의 번호
+}

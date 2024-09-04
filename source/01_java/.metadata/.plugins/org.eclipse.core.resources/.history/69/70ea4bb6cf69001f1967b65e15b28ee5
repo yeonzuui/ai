@@ -1,0 +1,5 @@
+package com.lec.ex5_final;
+// final 변수 : 수정 불가
+public class FinalTestMain {
+
+}

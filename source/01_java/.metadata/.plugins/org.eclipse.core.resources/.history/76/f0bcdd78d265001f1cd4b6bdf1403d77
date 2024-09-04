@@ -1,0 +1,7 @@
+package com_lec.ex;
+
+public class Hello {
+	public static void main(String[] args) {
+		System.out.println("args 배열 길이: " + args.length);
+	} // main
+} // class

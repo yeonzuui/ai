@@ -1,0 +1,12 @@
+package com.lec.ex4_account;
+
+public class AccountTestMain {
+	public static void main(String[] args) {
+		Account hong = new Account("100-1", "홍길동");
+		hong.deposit(100);
+		hong.withdraw(150);
+		hong.infoPrint(); //다음주에 
+		System.out.println(hong.infoString);
+		Account hong1 = new Account();
+	} // main
+} // class

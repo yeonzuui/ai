@@ -1,0 +1,12 @@
+package com.lec.ex3_static;
+
+public class MomTestMain {
+	public static void main(String[] args) {
+		Child child1 = new Child("첫째 길동이");
+		System.out.println("첫째 엄마 지갑 : " + child1.mom.money);
+		child1.takeMoney(1000);
+		child1.takeMoney(1000);
+		child1.takeMoney(1000);
+		System.out.println("첫째 엄마 지갑 : " + child1.mom.money);
+	}
+}

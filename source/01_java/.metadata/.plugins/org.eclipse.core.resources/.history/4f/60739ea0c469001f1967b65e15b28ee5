@@ -1,0 +1,18 @@
+package com.lec.ex3_static;
+// Child child1 = new Child("첫째")
+// child1.takeMoney(100);
+public class Child {
+	private String name;
+	Mom mom;
+	public Child(String name) {
+		this.name = name;
+		mom = new Mom();
+	}
+	public void takeMoney(int money) {
+		if (mom.money >= money) {
+			mom.money -= money; // 돈 줌
+		}else {
+			
+		}
+	}
+} // class

@@ -1,0 +1,7 @@
+package com.lec.ex1_car;
+
+public class CarPractice {
+	private String color;
+	private int    cc;
+	private int    speed;
+}

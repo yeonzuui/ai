@@ -1,0 +1,12 @@
+package com.lec.ex3_static;
+// Child child1 = new Child("첫째")
+// child1.takeMoney(1000);
+public class Child {
+	private String name;
+	Mom mom;
+	public Child(String name) {
+		this.name = name;
+		mom = new Mom();
+	}
+	
+}
