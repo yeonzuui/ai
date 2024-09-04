@@ -1,0 +1,11 @@
+    ① 논리형 boolean: T/F
+    ② 문자형 char: 2byte, 한 글자만 가능
+    ③ 정수형 byte 1byte
+    ④ 
+    ⑤ 
+    ⑥ 
+    ⑦
+    ⑧
+    ⑨
+    ⑩ 
+
