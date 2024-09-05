@@ -9,7 +9,7 @@
  ⑨ 생성자 함수도 overloading 가능
       [Rect.java]
       public Rect( ) { }             // default 생성자
-      public Rect(int side) {   // 매개변수 1개인 생성자
+      public Rect(int side) {        // 매개변수 1개인 생성자
       	width  = side;
 	height = side;
       }
