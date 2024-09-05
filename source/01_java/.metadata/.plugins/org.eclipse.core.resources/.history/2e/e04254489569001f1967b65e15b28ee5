@@ -1,8 +1,0 @@
-package com.lec.ex4_account;
-
-public class AccountTestMain {
-	public static void main(String[] args) {
-		Account hong = new Account("100-1", "홍길동");
-		System.out.println(hong);
-	} // main
-} // class

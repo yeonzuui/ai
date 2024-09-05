@@ -1,8 +1,0 @@
-package com.lec.ex3_static;
-
-public class Mom {
-	int money;
-	public Mom() {
-		money = 2000;
-	}
-}

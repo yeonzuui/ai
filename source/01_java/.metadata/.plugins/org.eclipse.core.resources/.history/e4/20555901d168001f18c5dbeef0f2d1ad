@@ -1,6 +1,0 @@
-package com.lec.method;
-// sum(10, 100), sum(10)-함수 overloading / evenOdd(10)  / abs(-9)
-// method 4개 
-public class Arithmetic {
-
-}

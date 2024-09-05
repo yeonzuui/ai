@@ -1,7 +1,0 @@
-package com.lec.ex2_rect;
-
-public class RectMain {
-	public static void main(String[] args) {
-		Rect r1 = new Rect(); // new -> 생성자 함수 호출
-	}
-}

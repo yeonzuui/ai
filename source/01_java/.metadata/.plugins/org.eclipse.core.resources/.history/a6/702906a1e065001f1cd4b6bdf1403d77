@@ -1,5 +1,0 @@
-package com.lec.quiz;
-// 배열 안의 값의 합계, 평균, 최댓값, 최솟값 출력
-public class Quiz2 {
-
-}

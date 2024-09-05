@@ -1,5 +1,0 @@
-package com.lec.ex1_student;
-// 데이터 : name(String), kor(int), eng(int), mat(int), tot(int), avg(double)
-public class Student {
-	private
-}

@@ -1,8 +1,0 @@
-package com.lec.ex1_car;
-
-public class Carmain {
-
-	public static void main(String[] args) {
-
-	}
-}

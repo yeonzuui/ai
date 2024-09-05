@@ -1,5 +1,0 @@
-package com.lec.ex2_rect;
-// class : 속성(인스턴스변수), 생성자함수(속성데이터초기화), method, setter&getter
-public class Rect {
-
-}

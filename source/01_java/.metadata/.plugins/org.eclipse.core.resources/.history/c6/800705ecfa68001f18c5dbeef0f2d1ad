@@ -1,8 +1,0 @@
-package com.lec.ex2_rect;
-// class : 속성(인스턴스변수), 생성자함수(속성데이터초기화), method, setter&getter
-// Rect r1 = new Rect()
-// Rect r1 = new Rect(2, 4)
-// 생성자함수도 overloading 가능(매개변수 X, 매개변수 1개, 매개변수 2개,....)
-public class Rect {
-
-}

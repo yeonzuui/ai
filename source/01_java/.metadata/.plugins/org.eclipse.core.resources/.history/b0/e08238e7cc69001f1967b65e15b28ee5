@@ -1,6 +1,0 @@
-package com.lec.ex4_product;
-
-public class Product {
-	// 데이터(인스턴스 변)
-	private String name; // 모델명
-}

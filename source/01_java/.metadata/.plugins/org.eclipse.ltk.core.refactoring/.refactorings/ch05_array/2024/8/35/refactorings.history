@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;com_lec.ex.Ex055height&apos; to &apos;Ex05height&apos;&#x0D;&#x0A;- Original project: &apos;ch05_array&apos;&#x0D;&#x0A;- Original element: &apos;com_lec.ex.Ex055height&apos;&#x0D;&#x0A;- Renamed element: &apos;com_lec.ex.Ex05height&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Ex055height&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com_lec.ex{Ex055height.java[Ex055height" matchStrategy="1" name="Ex05height" qualified="false" references="true" similarDeclarations="false" stamp="1724914823702" textual="false" version="1.0"/>
-</session>

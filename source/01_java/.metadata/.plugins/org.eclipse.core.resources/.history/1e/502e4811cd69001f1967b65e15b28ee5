@@ -1,6 +1,0 @@
-package com.lec.ex4_product;
-// a101 102 103 104.... 시리얼 넘버 
-public class Product {
-	// 데이터(인스턴스 변수
-	private String modelNo; // 모델명
-}

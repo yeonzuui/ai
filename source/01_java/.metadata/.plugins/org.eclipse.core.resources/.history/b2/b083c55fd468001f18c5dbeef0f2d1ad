@@ -1,9 +1,0 @@
-package com.lec.method;
-
-public class Ex03 {
-	public static void main(String[] args) {
-		System.out.println("-9의 절댓값: " + Arithmetic.abs(-9));
-		int tot = Arithmetic.sum(10, 100);
-		System.out.println(Math.random()); // = Arithmetic
-	} // main
-} // class
