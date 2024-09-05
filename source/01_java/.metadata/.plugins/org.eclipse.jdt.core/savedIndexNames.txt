@@ -1,4 +1,0 @@
-INDEX VERSION 1.134+D:\ai\source\01_java\.metadata\.plugins\org.eclipse.jdt.core
-1613227737.index
-1865797976.index
-2676596743.index

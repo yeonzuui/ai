@@ -1,0 +1,7 @@
+올릴 때 
+- git add source .
+- git add . 
+  git push -u origin main
+
+
+땡길 때
