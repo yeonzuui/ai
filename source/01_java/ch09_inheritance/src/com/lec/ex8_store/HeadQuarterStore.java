@@ -5,7 +5,7 @@ public class HeadQuarterStore {
 	// 데이터
 	private String storeName;
 	
-	// 
+	// 생성자
 	public HeadQuarterStore(String storeName) {
 		this.storeName = storeName;
 	}
@@ -24,5 +24,16 @@ public class HeadQuarterStore {
 	public void gongi() {
 		System.out.println("공기밥 : 1000원");
 	}
+	
+	@Override
+	public String toString() {
+		return "★" + storeName + "★";
+	}
+	
+	// getter
+	public String getStoreName() {
+		return storeName;
+	}
+	
 	
 }	
