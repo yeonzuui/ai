@@ -1,7 +1,9 @@
 올릴 때 
-- git add source .
 - git add . 
+  git commit -m "커밋내용"
   git push -u origin main
 
 
 땡길 때
+- git clone 주소 받을폴더이름((최초 한번만))
+- git pull origin main

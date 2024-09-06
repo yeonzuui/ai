@@ -1,9 +1,0 @@
- ① 접근제한자: 클래스, 메소드, 변수의 접근 범위를 지정
- ② public: 다른 class, 다른 package에서도 접근 가능
- ③ protected: 같은 package 또는 상속 관계에서 접근 가능
- ④ default(생략): 같은 package 내에서만 접근 가능
- ⑤ private: 해당 class 내에서만 접근 가능
- ⑥ static: 객체를 생성해 변수에 할당하는 수고로움 없이 다른 package에서도  호출 가능하게 함.
- ⑦ 패키지: 관련된 클래스들을 Grooping
- ⑧ 패키지 선언: 회사 도메인 이름의 역순으로 만든다. 
- ⑨ 예시) com.lec.Ex
