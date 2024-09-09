@@ -21,3 +21,6 @@ public class Ex03_loop {
 		scanner.close();
 	}
 }
+
+// equalsIgnoreCase(): 대소문자 구별없이 비교(T/F)
+// 대소문자 구분없이 x나오면(T) = !(F)일 때 do~while문 실행
