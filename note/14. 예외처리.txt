@@ -1,0 +1,25 @@
+ ① 예외(exception): 실행 됐었다가 뜻하지 않은 Error를 만나는 것
+ ② 예외처리는 일종의 보험
+ ③ 예외가 발생하면 예외 객체(exception 변수)가 자동 생성됨. 
+     익셉션 변수는 예외 종류에 따라 달라짐.
+	ex. ArithmeticException
+	ex. InputMismatchException
+ ④ 1) try-catch: 내가 보험을 드는 것으로 비유
+	try{ 
+	    예외가 발생할 수도 있는 부분 
+	}catch( 변수 타입 예외변수 선언 ){ 
+	    예외시 실행할 명령문; // 예외 발생 시에만 수행
+	}finally{
+	    예외발생 무관, 맨 마지막에 실행할 명령문;
+	}
+ ⑤ getMessage(): 에러 메세지 반환
+ ⑥ 변수 타입에 Exception → ArithmeticException, InputMismatchException 포괄
+ ⑦ 중복 try문: 실행은 가능하지만, 절대 하지 말 것
+ ⑧ catch절이 여러개일 때, catch절 내 예외변수의 type은 상속관계에 있지 않아야 함 (ex. Exception - ArithmeticException)
+ ⑨ catch절을 생략할 수는 X
+ ⑩ finally절: try절 밖에 써도 동일하게 실행되는 것처럼 보임
+ ⑪ ctrl + t : 메소드 계보
+ ⑫ 예외는 크게 두가지: RuntimeException(언체크 예외) / 체크 예외
+    RuntimeException으로부터 상속받은, 즉 런타임 아닌 예외 type 쓸 거면 actionA-actionB-ThrowsEx-ThrowsTestMain 순으로 변수 호출된 구문으로 가서 try-catch 해줘야 해
+ ⑭ main 함수에서는 예외처리 않는 것을 추천 (발생하는 부분만 하기)
+NullPointerException : 자주 발생하는 예외 type

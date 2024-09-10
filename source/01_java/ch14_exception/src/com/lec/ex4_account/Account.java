@@ -24,15 +24,15 @@ public class Account {
 		balance += money;
 		System.out.println(money + "원 예금하여 잔액 : " + balance);
 	}
-	public void withdraw(long money) { // 잔액이 있을 경우만 인출, 잔액 부족하면 떼끼
+	public void withdraw(long money) throws Exception { // 잔액이 있을 경우만 인출, 잔액 부족하면 떼끼
 		if(balance >= money) {
 			balance -= money;
 			System.out.println(money + "원 인출하여 잔액 : " + balance);
 		}else {
-			// ch14에서는 강제 예외 발생
-			System.out.println("잔액이 부족하여 인출 불가합니다");
-		}
-	}
+//			ch14에서는 강제 예외 발생
+			throw new Exception("예외메세지 : " + money + "원 인출하기엔 잔액("+balance+")이 부족합니다");
+		} // if
+	} // withdraw
 	public void infoPrint() {
 		// 100-1 "홍길동"님 잔액 : 100원
 //		System.out.println(account + "\"" + ownerName + "\"님 잔액 : " + balance);

@@ -1,0 +1,14 @@
+ ① String에 사용할 method들
+	length(), indexOf(), lastIndexOf(), substring(), toUpperCase(), toLowerCase(), trim()
+	replace(), replaceAll(), equals(),
+ ② indexOf(): 특정 문자나 문자열이 처음으로 나타나는 위치를 반환,
+     lastIndexOf(): 마지막으로 나타나는 위치를 반환
+ ③ substring(): 문자열의 일부를 잘라서 반환
+ ④ toUpperCase(): 문자열을 모두 대문자로 변환
+ ⑤ trim(): 문자열의 앞뒤 공백을 제거
+ ⑥ replace(): 문자열 내 특정 문자를 다름 문자로 바꿈
+ ⑦ 날짜형들 : Date, Calendar(Calendar.getInstance()이용해서 생성), GregorianCalendar
+	    SimpleDateFormat
+ ⑧ 수학관련 : Math.round(), 난수 발생(Math.random()이용, Random이용)
+ ⑨ Object : toString(), equals() 재정의
+ ⑩ Wapper 클래스 : 기초데이터를 객체로 변형시키는 타입
