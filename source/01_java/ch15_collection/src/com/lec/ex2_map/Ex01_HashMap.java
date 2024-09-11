@@ -37,7 +37,7 @@ public class Ex01_HashMap {
 		hashMap2.put(22, "Lee soonsin");
 		hashMap2.put(40, "Shin gildong");
 		
-		// keySet을 이용한 반복자 객체 생성z
+		// keySet을 이용한 반복자 객체 생성
 		Iterator<Integer> iterator = hashMap2.keySet().iterator();
 		
 		// while문 이용한 출력

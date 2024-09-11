@@ -1,0 +1,6 @@
+Hello, World
+Hi, Big Data
+Hello, World
+Hi, AI
+내일부터 오라클 수업입니다
+DBMS 첫날

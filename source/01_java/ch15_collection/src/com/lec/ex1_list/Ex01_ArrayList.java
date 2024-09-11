@@ -61,4 +61,4 @@ public class Ex01_ArrayList {
 // get(): 인덱스값 반환 
 // remove(n): n번째 인덱스값 삭제(n번인덱스 → n-1번인덱스)
 // isEmpty(): 데이터가 존재하는지 확인(T/F)
-// clear(): 자료구조 내 모든 데이터 제거1
+// clear(): 자료구조 내 모든 데이터 제거

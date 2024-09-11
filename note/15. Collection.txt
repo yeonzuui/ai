@@ -22,7 +22,17 @@
 // isEmpty(): 데이터가 존재하는지 확인(T/F)
 // clear(): 자료구조 내 모든 데이터 제거
 
-// HashMap<K, V> key값 type(object만 가능), 인덱스값 type
+// HashMap<K, V> key값 type(object만 가능), 값 type
 // Iterator<key값 type> : 반복자
 // keySet(): 키값 차례대로 정렬
 // hasNext(): 다음 데이터 존재 여부(T/F)
+// Iterator가 한 번 소요되면, 이후 반복문에서는 실행되지 않음 (Iterator 한 번 더 생성해야 해)
+// key값은 유일해야 한다 ex. 전화번호
+
+// HashSet<V> 값 type
+// TreeSet: sort(정렬)
+
+
+공백있으면(white space)
+
+
