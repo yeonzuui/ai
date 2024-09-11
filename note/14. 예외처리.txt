@@ -22,4 +22,4 @@
  ⑫ 예외는 크게 두가지: RuntimeException(언체크 예외) / 체크 예외
     RuntimeException으로부터 상속받은, 즉 런타임 아닌 예외 type 쓸 거면 actionA-actionB-ThrowsEx-ThrowsTestMain 순으로 변수 호출된 구문으로 가서 try-catch 해줘야 해
  ⑭ main 함수에서는 예외처리 않는 것을 추천 (발생하는 부분만 하기)
-NullPointerException : 자주 발생하는 예외 type
+ ⑮ NullPointerException : 자주 발생하는 예외 type

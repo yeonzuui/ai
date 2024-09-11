@@ -22,3 +22,6 @@ public class Ex02_writer {
 		}
 	}
 }
+
+// writer: 데이터를 2byte 단위로 쓸 수 있게 하는 스트림
+// FileWriter("파일경로", T/F): 파일에 데이터 쓰기, 없는 파일은 생성
