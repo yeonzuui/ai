@@ -1,0 +1,10 @@
+ ① ctrl + space 함수 불러오기 + enter 자동 생성
+ ② ctrl + shift + s 전체 저장
+ ③ ctrl + shift + f 띄어쓰기 정리
+ ④ ctrl + m 인덱스 없애기 / 나타내기
+ ⑤ ctrl + d 한 줄 삭제
+ ⑥ ctrl + alt + 방향키 한 줄 복사
+ ⑦ alt + 방향키 코드 이동
+ ⑧ 
+ ⑨ 
+ ⑩ 
