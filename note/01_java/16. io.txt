@@ -1,0 +1,12 @@
+ ① Steam 객체: 파일을 읽고 쓸 수 있게 함
+ ② 1byte씩: InputStream, OutputStream
+ ③ 2byte씩: reader, writer
+ ④ FileInputStream("파일경로", T/F), FileOutputStream(), FileReader, FileWriter : 파일 열기 및 read or write 준비
+ ⑤ false → default 값, 새로운 데이터 쓰게되면 기존 데이터에 덮어씌움
+ ⑥ true → 기존 데이터를 유지하고 뒤이어 새로운 데이터를 덧붙임
+ ⑦ read(): 데이터를 읽고, 읽은 byte를 정수로 표현, 파일 끝에 도달하면 -1을 반환
+ ⑧ close(): finally 블록에서 파일 닫기, 메모리 누수 방지 위함
+ ⑨ getBytes(): String을 byte '배열'로 변환
+ ⑩ BufferedReader: Reader를 보조, 
+     FileReader를 감싸서 버퍼링 기능을 추가, 데이터 읽기 기능 향상
+     BufferedReader를 먼저 닫는 것이 좋음

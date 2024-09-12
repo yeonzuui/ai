@@ -1,0 +1,41 @@
+ ① DB(데이터베이스): 운영상 필요한 데이터를 중복을 최소화하여 모아 놓은 데이터 집합
+ ② DBMS(데이터베이스관리시스템): 모든 응용프로그램들이 데이터베이스를 공유할 수 있도록 유지 및 관리하는 소프트웨어시스템
+ ③ DBMS 기능 1) 정의: 테이블 생성, 삭제, 수정
+                   2) 조작: 데이터 검색, 수정, 삭제, 조회
+                   3) 제어: 무결성 유지, 보안, 복구, 병행 수행
+ ④ SELECT * FROM TAB; --현 계정이 갖고 있는 테이블들
+ ⑤ 날짜 표기법 셋팅(RR/MM/DD):
+     ALTER SESSION SET NLS_DATE_FORMAT = "RR/MM/DD";
+ ⑥ EMP 테이블 구조: 
+     DESC EMP;
+ ⑦ 특정 행 출력: WHERE 절(조건절) -- 비교연산자: 같다(=), 다르다(!=, ^=, <>), < <= > >=
+ ⑧ 논리연산자: AND, OR, NOT
+ ⑨ ORDER BY절
+ ⑩ NVL(TO_CHAR(MGR), 'CEO')
+
+SELECT * FROM 테이블명
+    WHERE 필드명 = 데이터값;
+(NOT) BETWEEN A AND: B(A 미만, B초과)
+IN / NOT IN
+필드 LIKE 포맷: %(0글자이상), _(한 글자)를 포함한 패턴 / 주로 검색 시 사용
+
+-- 대문자로 쓸 것
+-- 별칭 지정: 필드명 AS "alias"
+8~~
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+- C:\oraclexe\app\oracle\product\11.2.0\server\bin\sqlplus -> cmd창에서 접근 가능
+SQL> exit; -> 나가기, 관리자 계정 접속 해제
+c:\~> sqlplus system/비번 // 관리자 권한으로 들어오기
+         sqlplus "/as sysdba   // DBA 권한으로 들어오기
+윈도우 - oracle - start/stop Database (서비스 시작/멈춤)
+윈도우 - oracle - 관리자권한으로실행
+SQL>create user scott identified by tiger; // 'scott'이라는 계정 생성, scott (오라클 초기 멤버), 비밀번호 tiger
+4. scott 계정으로 접속 후, 수업에 쓸 데이터 넣기
+C:~> sqlplus scott/tiger
+
+sqldeveloper 압축풀고 IDE 폴더로 이동
+sqldeveloper.exe 바탕화면 바로가기
+
+(sql developer 한글 설정 변경) 도구-환경설정
+

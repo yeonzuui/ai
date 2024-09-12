@@ -24,3 +24,6 @@ public class Ex01_reader {
 		} 
 	} // main
 } // class
+
+// reader: 2byte씩 읽을 수 있게 하는 스트림
+// FileReader("파일경로"): 파일 열기 및 read 준비

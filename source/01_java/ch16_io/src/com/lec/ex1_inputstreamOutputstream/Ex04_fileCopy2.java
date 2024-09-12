@@ -1,5 +1,5 @@
 package com.lec.ex1_inputstreamOutputstream;
-
+// 원본 파일 크기만큼의 바이트 배열을 생성하여 데이터 read & write
 import java.io.*;
 
 // ~/bts_7.mp4 => ~/bts_copy.mp4 (7,460,545 byte) 
@@ -10,9 +10,8 @@ public class Ex04_fileCopy2 {
 		InputStream is = null;
 		OutputStream os = null;
 		try {
-			// 파일 객체 만들기
+			// 원본 파일 크기를 originalFile 변수에 할당
 			File originalFile = new File("D:/ai/lecNote/01_java/bts_7.mp4");
-			// /는 \\로 대체 가능
 			is = new FileInputStream("D:/ai/lecNote/01_java/bts_7.mp4"); // originalFile 넣어도 돼
 			os = new FileOutputStream("D:\\ai\\lecNote\\01_java\\bts_copy1.mp4");
 			byte [] bs = new byte[(int)originalFile.length()]; // 원본파일크기, 배열크기를 파일크기만큼
@@ -42,3 +41,6 @@ public class Ex04_fileCopy2 {
 		System.out.println((end-start)/1000.0 + "초 걸림");
 	}
 }
+
+// File: 파일과 관련된 속성(크기, 경로, 권한 등)을 가져옴
+// length(): 파일의 크기를 byte 단위로 반환, 파일 크기를 측정하는 기본 단위가 byte이기 때문
