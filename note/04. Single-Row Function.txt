@@ -1,0 +1,42 @@
+ ① 단일행함수(INPUT1 -> OUTPUT 1): 행 별로 하나의 결과를 RETURN
+ ② 분류 : 숫자함수, 문자처리함수, 날짜함수, 형변환함수, NULL, etc
+ ③ DUAL 테이블: 테스트하기 위한 용도의 oracle 내장 객체, 한 행으로 출력
+ ④ 숫자 관련 함수: 
+- ABS(x): 절댓값
+- COS(x)
+- EXP(x): e의 x승
+- FLOOR(x): 소수점 아래를 버림
+- CEIL(x): 소수점에서 올림
+- POWER(m,n): m의 n승
+- ROUND(x, n) 지정 자릿수에서 반올림
+- TRUNC(x, n): 지정 자릿수 이하 버림
+- MOD(x, y) : x/y 나머지
+ ⑤ 문자 관련 함수: 
+- LOWER()/UPPER() : 소문자/ 대문자
+- INITCAP() : 어절의 첫 글자만 대문자
+- CONCAT(s1, s2) : 문자 연결
+- SUBSTR(str, x, y) : x부터 y개만큼 추출, SUBSTRB(): 바이트 기준
+- LENGTH(),  LENGTHB()
+- INSTR(str1, str2, x) str1에서 str2를 몇번째 발견하는지 x부터 찾기
+- LPAD(str, 총 길이, 여백에 삽입될 문자), RPAD
+- TRIM/LTRIM/RTRIM : 여백제거
+- CHR/ASCII 숫자 ↔ 아스키코드
+- REPLACE(str, 'a', 'b') : str에서 a를 b로 변경
+ ⑥ 날짜 관련 함수: 
+- SYSDATE: 현재 날짜
+- MONTHS_BETWEEN(시점1, 시점2): 시점1, 시점2 사이가 몇 개월인지
+- ADD_MONTHS(특정시점, 개월수)
+- NEXT_DAY(시점, '토'): 특정시점부터 처음 돌아오는 토요일
+- LAST_DAY: 해당 달의 말일, 
+- ROUND(날짜, 'YEAR'/'MONTH'/'DAY'/생략가능): 날짜 반올림
+- TRUNC(날짜, 'YEAR'/'MONTH'/'DAY'/생략가능): 날짜 버림
+ ⑦ 형변환함수: 
+- TO_CHAR : 날짜형 혹은 숫자형을 문자형으로 변환
+- TO_DATE : 문자형을 날짜형으로 변환
+- TO_NUMBER : 문자형을 숫자형으로 변환
+ ⑧ NVL(value1, value2 ): value1이 NULL일 시, value2로 변환
+ ⑨ 그외: EXTRACT: 날짜형 데이터에서 년도, 월, 일만 추출하고자 할 때
+ ⑩ 계층화:  LEVEL : 계층별로 레벨 표시
+	START WITH : 계층적인 출력 형식을 표현하기 위한 최상위 행
+	CONNECT BY PRIOR : 계층 관계의 데이터를 지정하는 컬럼
+ ⑪ 싱글라인필드와 그룹함수는 같이 사용 불가
