@@ -1,0 +1,21 @@
+ ① DML(Data Manipulation Language): 데이터 검색, 수정 등
+ ② └ INSERT : 데이터베이스 객체에 데이터를 입력
+ ③ └ DELETE : 데이터베이스 객체에 데이터를 삭제
+ ④ └ UPDATE : 기존에 존재하는 데이터베이스 객체 안의 데이터수정
+ ⑤ └ SELECT : 데이터베이스 객체로부터 데이터를 검색
+ ⑥ DDL(Data Definition Language): 데이터와 그 구조를 정의
+ ⑦ └
+ ⑧ └
+ ⑨ └
+ ⑩ └
+ ⑪ 
+ ⑫ └
+ ⑬ └
+ ⑭ └
+ ⑮ └
+ ⑯ 데이터형: 
+- VACHAR2: 입력된 자료 길이만큼 저장 영역 차지, 4000byte까지
+- CLOB: e-BOOK과 같은 대용량의 텍스트 데이터 저장
+- DATE : BC 4712년 1월 1일~AD 4712년 12월 31일까지의 날짜
+
+- DROP TABLE 테이블명: 테이블 삭제

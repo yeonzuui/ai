@@ -9,11 +9,11 @@ SELECT * FROM EMP, DEPT
 -- ★ 1. EQUI JOIN(동등 조인 = 공통필드값이 일치되는 조건만 JOIN)
 SELECT * FROM EMP, DEPT
     WHERE ENAME = 'SMITH'
-    AND EMP.DEPTNO = DEPT.DEPTNO;
+        AND EMP.DEPTNO = DEPT.DEPTNO;
 SELECT * FROM EMP, DEPT
     WHERE EMP.DEPTNO = DEPT.DEPTNO;
 SELECT * 
-    FROM EMP, E, DEPT, D
+    FROM EMP E, DEPT D
     WHERE E.DEPTNO = D.DEPTNO;
     -- EX. 모든 사원의 사번, 이름, 직책, 상사사번, 부서번호, 부서이름, 근무지
     SELECT EMPNO, ENAME, JOB, MGR, E.DEPTNO, DNAME, LOC -- 공통된 필드는 명확하게 테이블 지정
@@ -57,7 +57,7 @@ SELECT *
         FROM EMP E, DEPT D
         WHERE E.DEPTNO=D.DEPTNO AND JOB ='MANAGER';
     -- 탄탄EX4. COMM이 NULL이 아닌 사원의 이름, 급여, 부서번호, 근무지를 출력
-    SELECT ENAME, SAL, E.DEPTNO LOC
+    SELECT ENAME, SAL, E.DEPTNO, LOC
         FROM EMP E, DEPT D
         WHERE E.DEPTNO=D.DEPTNO AND NOT COMM IS NULL;
     -- EX. COMM이 NULL이고 SAL이 1200이상인 사원의 이름, 급여, 부서번호, 부서명
@@ -75,11 +75,11 @@ SELECT *
     SELECT * FROM SALGRADE; -- 등급 5가지
     SELECT * FROM EMP, SALGRADE 
         WHERE ENAME = 'SCOTT'; -- CROSS JOIN
-    SELECT * FROM EMP E, SALGRADE S 
-        WHERE ENAME = 'SCOTT' 
+    SELECT * FROM EMP E, SALGRADE G
+        WHERE ENAME = 'SCOTT'
             AND SAL BETWEEN LOSAL AND HISAL;
     -- EX. 모든 사원의 사번, 이름, 상사사번, 급여, 급여등급(1등급, 2등급...)
-    SELECT EMPNO, ENAME, MGR, SAL, GRADE||'등급' GRADE
+    SELECT EMPNO, ENAME, MGR, SAL, GRADE || '등급' GRADE
         FROM EMP, SALGRADE
         WHERE SAL BETWEEN LOSAL AND HISAL;
     -- 탄탄EX1. COMM이 NULL이 아닌 사원의 이름, 급여, 급여등급, 부서번호, 부서명, 근무지 
@@ -89,7 +89,7 @@ SELECT *
             AND E.DEPTNO=D.DEPTNO 
             AND COMM IS NOT NULL;
     -- 탄탄EX2. 이름, 급여, 입사일, 급여등급(신입순)
-    SELECT ENAME, SAL, HIREDATE, GRADE 
+    SELECT ENAME, SAL, HIREDATE, GRADE
         FROM EMP, SALGRADE
         WHERE SAL BETWEEN LOSAL AND HISAL
         ORDER BY HIREDATE DESC; // 생략은 ASD(ASCENDING, 오름차순)
@@ -99,7 +99,7 @@ SELECT *
         FROM EMP E, SALGRADE, DEPT D
         WHERE SAL BETWEEN LOSAL AND HISAL 
             AND E.DEPTNO=D.DEPTNO
-        ORDER BY ENAME, ANNUALSAL DESC; 
+        ORDER BY DNAME, ANNUALSAL DESC; 
     -- 탄탄EX4. 이름, 직책, 급여, 등급, 부서번호, 부서명(급여가 1000~3000사이. 
                                 -- 정렬조건: 부서번호순, 직책순, 급여큰순) 
     SELECT ENAME, JOB, SAL, GRADE, E.DEPTNO, DNAME
@@ -108,7 +108,7 @@ SELECT *
             AND SAL BETWEEN LOSAL AND HISAL
             AND SAL BETWEEN 1000 AND 3000
         ORDER BY DEPTNO, JOB, SAL DESC;
-    -- 탄탄EX5. 이름, 급여, 등급, 입사일, 근무지(81년 입사한 직원만 등급 큰순)
+    -- 탄탄EX5. 이름, 급여, 등급, 입사일, 근무지(81년 입사한 직원만, 등급 큰 순 정렬)
    SELECT ENAME, SAL, GRADE, HIREDATE, LOC
         FROM EMP E, DEPT D, SALGRADE
         WHERE E.DEPTNO=D.DEPTNO 
@@ -126,12 +126,12 @@ SELECT ENAME, JOB, SAL, DNAME
     FROM EMP E, DEPT D
     WHERE E.DEPTNO=D.DEPTNO
         AND LOC = 'NEW YORK';
---3. 보너스를 받는 사원에 대하여 이름,부서명,위치를 출력
+--3. 보너스를 받는 사원에 대하여 이름, 부서명, 위치를 출력
 SELECT ENAME, DNAME, LOC
     FROM EMP E, DEPT D
     WHERE E.DEPTNO=D.DEPTNO
     AND COMM IS NOT NULL OR COMM != 0; -- COMM > 0도 가능
---4. 이름 중 L자가 있는 사원에 대하여 이름,업무,부서명,위치를 출력
+--4. 이름 중 L자가 있는 사원에 대하여 이름, 업무, 부서명, 위치를 출력
 SELECT ENAME, JOB, DNAME, LOC
     FROM EMP E, DEPT D
     WHERE E.DEPTNO=D.DEPTNO 
@@ -163,15 +163,15 @@ SELECT EMPNO, ENAME, JOB, SAL, GRADE
     ORDER BY SAL DESC;
 
 -- ★ 3. SELF-JOIN: 동일 테이블 JOIN
-SELECT EMPNO, ENAME, MGR 
+SELECT EMPNO, ENAME, MGR
     FROM EMP
     WHERE ENAME = 'SMITH';
-SELECT WORKER.EMPNO, WORKER.ENAME, WORKER.MGR, MANAGER.EMPNO, MANAGER.ENAME
+SELECT WORKER.EMPNO, WORKER.ENAME, WORKER.MGR, MANAGER.EMPNO MANAGER_NUM, MANAGER.ENAME MANAGER_NAME
     FROM EMP WORKER, EMP MANAGER
     WHERE WORKER.ENAME = 'SMITH'
         AND WORKER.MGR = MANAGER.EMPNO;
     -- EX. 모든 사원의 사번, 이름, 상사사번, 상사이름
-    SELECT W.EMPNO, W.ENAME, W.MGR, M.ENAME
+    SELECT W.EMPNO, W.ENAME, W.MGR, M.ENAME MGRNAME
         FROM EMP W, EMP M
         WHERE W.MGR=M.EMPNO; --13행(KING의 MGR이 NULL이라서 EMPNO에 NULL이 없어)
     -- EX. 이름, 상사이름
@@ -189,20 +189,22 @@ SELECT WORKER.EMPNO, WORKER.ENAME, WORKER.MGR, MANAGER.EMPNO, MANAGER.ENAME
     SELECT * FROM EMP;
     ROLLBACK;
     -- 탄탄EX1. 매니저가 KING인 사원들의 이름과 직급 출력
-   
+    SELECT W.ENAME, W.JOB
+        FROM EMP W, EMP M
+        WHERE W.MGR = M.EMPNO AND M.ENAME = 'KING';
     -- 탄탄EX2. SCOTT과 동일한 부서번호인 사원의 이름을 출력(6장에서는 SUBQUERY)
     SELECT E1.ENAME, E1.DEPTNO, E2.ENAME, E2.DEPTNO
         FROM EMP E1, EMP E2
         WHERE E1.ENAME = 'SCOTT'
-            AND E1.DEPTNO=E2.DEPTNO
+            AND E1.DEPTNO = E2.DEPTNO
             AND E2.ENAME != 'SCOTT';
     -- 탄탄EX3. SCOTT과 동일한 LOC에서 근무하는 사원의 이름 출력(6장에서는 SUBQUERY)
     SELECT E1.ENAME, D1.LOC, E2.ENAME, D2.LOC
         FROM EMP E1, DEPT D1, EMP E2, DEPT D2
-        WHERE E1.DEPTNO=D1.DEPTNO 
-            AND E1.ENAME='SCOTT'
-            AND E2.DEPTNO=D2.DEPTNO
-            AND D1.LOC=D2.LOC
+        WHERE E1.DEPTNO   = D1.DEPTNO 
+            AND E1.ENAME  = 'SCOTT'
+            AND E2.DEPTNO = D2.DEPTNO
+            AND D1.LOC    = D2.LOC
             AND E2.ENAME != 'SCOTT';
             
     -- DML(데이터 조작어 : INSERT, DELETS, UPDATE, SELECT)구문 실행 취소: ROLLBACK
@@ -218,11 +220,11 @@ SELECT W.ENAME, W.MGR, M.EMPNO, M.ENAME
     -- SMITH의 상사는 FORD다(상사가 없는 직원은 [~의 상사는 없다]라고 출력)
     SELECT W.ENAME || '의 상사는  ' || NVL(M.ENAME, '없') || '다' "MESSAGE"
         FROM EMP W, EMP M
-        WHERE W.MGR=M.EMPNO(+);
+        WHERE W.MGR = M.EMPNO(+);
     -- 말단사원 
     SELECT M.EMPNO, M.ENAME
         FROM EMP W, EMP M
-        WHERE W.MGR(+)=M.EMPNO 
+        WHERE W.MGR(+) = M.EMPNO 
             AND W.ENAME IS NULL;
 -- (2) EQUI JOIN에서의 OUTER JOIN
 SELECT * 
