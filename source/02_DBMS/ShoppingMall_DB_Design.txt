@@ -1,0 +1,19 @@
+MEMBER-mID(pk), mNAME, mADDRESS, mTEL, mEMAIL
+
+PRODUCT-pCODE(pk), pNAME, PRICE, STOCK
+
+CART(장바구니) -cNO(pk) mID pCode QTY   cost
+                           	1       abc     A1      3     9000
+                          	2       abc     B1      1     3000
+ORDERS(주문배송) 
+oNo  mId  oNAME  oADDR  oTEL  oDATE   
+2401 abc    홍길동  관악구    999    7/26     
+2402 abc    홍아빠  제주       777    7/28   
+
+ORDER_DETAIL(주문물품상세)
+odNO oNo pCode1 QTY1 cost1 
+1        2401 A1     3    9000
+2        2401 B1    1     3000
+3        2402 A1     2    6000    
+4        2402 B1     1    3000 
+5        2402 C1     1    7000
