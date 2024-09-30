@@ -26,3 +26,109 @@ ROLLBACK TO C1;
 SELECT * FROM DEPT01;
 ROLLBACK;
 SELECT * FROM DEPT01;
+
+-- SELECT
+-- 4. 입사일이 1981년 2월 20과 1981년 5월 1일 사이에 입사한 사원의 이름, 직책, 입사일을 출력(단 hiredate 순으로 출력)
+SELECT ENAME, JOB, HIREDATE
+    FROM EMP
+    WHERE HIREDATE BETWEEN '81/02/20' AND '81/05/01'
+    ORDER BY HIREDATE;
+-- 6. sal이 1500이상이고 deptno가 10,30인 사원의 ename과 sal를 출력
+SELECT ENAME, SAL
+    FROM EMP
+    WHERE SAL >= 1500 AND DEPTNO IN (10, 30);
+
+-- 12. 입사일이81년이고 업무가'SALESMAN'이 아닌 직원의 사번, 사원명, 입사일, 업무, 급여를 출력.
+SELECT EMPNO, ENAME, HIREDATE, JOB, SAL
+    FROM EMP
+    WHERE HIREDATE LIKE '81%' AND JOB != 'SALESMAN';
+
+-- 14. 사원명의세번째알파벳이＇N＇인사원의사번, 사원명을출력
+SELECT EMPNO, ENAME
+    FROM EMP
+    WHERE ENAME LIKE '__N%';
+
+-- 15. 사원명에‘A’가 들어간사원의사번, 사원명을출력
+SELECT EMPNO, ENAME
+    FROM EMP
+    WHERE ENAME LIKE '%A%'; 
+-- JOIN
+-- 4. EMP테이블에서 사원명에알파벳L이있는사원에대해사원명, 직책, 부서명, 근무지를 출력하시오.
+SELECT ENAME, JOB, DNAME, LOC
+    FROM EMP E, DEPT D
+    WHERE E.DEPTNO = D.DEPTNO
+        AND ENAME LIKE '%L%';
+-- 8. 사번, 사원명, 직책, 급여, 급여등급을 급여기준으로 내림차순정렬하여출력하시오
+SELECT EMPNO, ENAME, JOB, SAL, GRADE
+    FROM EMP, SALGRADE
+    WHERE SAL BETWEEN LOSAL AND HISAL
+    ORDER BY SAL DESC;
+-- 5. 상사가 없는 직원과 상사가 있는 직원 모두에 대해 사원명, 급여, 부서코드, 부서명, 근무지, 직속상사명을 출력하시오. 
+-- 단, 직속상사가 없을 경우 직속상사명에는‘없음’으로 대신 출력하시오.
+SELECT W.ENAME, W.SAL, W.DEPTNO, DNAME, LOC, NVL(M.ENAME, '없음')
+    FROM EMP W, EMP M, DEPT D
+    WHERE W.MGR = M.EMPNO(+)
+        AND W.DEPTNO = D.DEPTNO;
+-- SINGLE-ROW FUNCTION
+-- 13. 사원 테이블에서 부서번호가20인사원의사번, 이름, 직무, 급여를 출력하시오(급여는앞에$를삽입하고3자리마다,를 출력한다)
+SELECT EMPNO, ENAME, JOB, TO_CHAR(SAL, '$99,999') "SAL"
+    FROM EMP
+    WHERE DEPTNO = 20;
+-- GROUP FUNCTION
+-- 8. 사원수가5명이상넘는부서명과사원수를출력
+SELECT DNAME, COUNT(*)
+    FROM EMP E, DEPT D
+    WHERE E.DEPTNO = D.DEPTNO
+    GROUP BY DNAME
+    HAVING COUNT(*) >= 5;
+-- SUBQUERY
+-- 16. EMP 테이블에서 King인 사원의 직속부하의 이름과급여
+SELECT ENAME, SAL
+    FROM EMP
+    WHERE MGR = (SELECT EMPNO FROM EMP WHERE INITCAP(ENAME) = 'King');
+    
+-- DDL, DML
+DROP TABLE STUDENT;
+DROP TABLE MAJOR;
+CREATE TABLE MAJOR(
+    MAJOR_CODE       NUMBER(2)     PRIMARY KEY,
+    MAJOR_NAME       VARCHAR2(50)  UNIQUE,
+    MAJOR_OFFICE_LOC VARCHAR2(255) NOT NULL
+);
+CREATE TABLE STUDENT(
+    STUDENT_CODE VARCHAR2(10) PRIMARY KEY,
+    STUDENT_NAME VARCHAR2(50) NOT NULL,
+    SCORE        NUMBER(3)    CHECK(SCORE >= 0 AND SCORE < = 100),
+    MAJOR_CODE   NUMBER(2)    REFERENCES MAJOR(MAJOR_CODE)
+);
+INSERT INTO MAJOR VALUES(1, '컴퓨터공학', 'A101호');
+INSERT INTO MAJOR VALUES(2, '빅데이터', 'A102호');
+INSERT INTO STUDENT VALUES(101, '홍길동', 99, 1);
+INSERT INTO STUDENT VALUES(102, '신길동', 100, 2);
+SELECT STUDENT_CODE "학번", STUDENT_NAME "이름", SCORE "점수", M.MAJOR_CODE "학과코드",
+       MAJOR_NAME "학과명", MAJOR_OFFICE_LOC "학과사무실"
+    FROM MAJOR M, STUDENT S
+    WHERE M.MAJOR_CODE = S.MAJOR_CODE;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
