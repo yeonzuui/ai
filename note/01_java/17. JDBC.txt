@@ -1,0 +1,23 @@
+ ① JDBC 드라이버
+	- 오라클 드라이버와 MySQL 드라이버를 자바가 설치되어 있는 
+	C:\Program Files\Java\jdk-17\lib 폴더에 복사
+	- ojdbc6.JAR (C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib)
+	- mysql-connector-j-8.0.33.jar 
+ ② JDBC(Java Database Connectivity)
+ ③ 자바 프로그램을 DB와 연결해 데이터를 주고 받을 수 있게 해 주는 프로그래밍 인터페이스
+ ④ 자바 패키지의 일부, 자바 데이터베이스 프로그래밍 API
+ ⑤ 
+ ⑥ 
+ ⑦ 
+ ⑧ 
+ ⑨ 
+ ⑩ 
+ ⑪ 
+ ⑫ 
+ ⑬ 
+ ⑭ 
+ ⑮ 
+
+이클립스에서 exERD 파일 열기 
+-  https://exerd.com - 다운로드 - 이클립스 플러그인으로 설치(3.x 버전) - https://exerd.com/update/exerd/3.x/ 주소 복사
+- 이클립스 상단 Help - install new software... - Work with: 에 주소 붙여넣기 - Contact all update sites during install to find required software 체크 해제 - Name 박스에 eXERD 체크하고 더블클릭하여 eXERD Modeler 들어왔는지 확인 후 Next
