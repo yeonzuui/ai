@@ -7,7 +7,7 @@ public class Single {
 	private int i;
 	
 	// 생성자
-	private Single() {} // 아예 객체 못 만듦
+	private Single() {} // 외부에서 객체 생성(new)불가
 	
 //	INSTANCE 변수 생성
 //	private static Single INSTANCE; // 변수이름은 대문자

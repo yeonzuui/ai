@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 // 사용자에게 원하는 부서번호를 입력받아 부서 정보 출력
 public class Ex1_selectWhereDeptno {
+	// SQL문 먼저 만들기
 	public static void main(String[] args) {
 		String driver = "oracle.jdbc.driver.OracleDriver";  // 드라이버
 		String url = "jdbc:oracle:thin:@localhost:1521:xe"; // 주소
@@ -14,11 +15,12 @@ public class Ex1_selectWhereDeptno {
 		ResultSet rs = null;
 		// scanner 변수 생성
 		Scanner sc = new Scanner(System.in);
-		System.out.print("몇번?");
+		System.out.print("원하는 부서번호는?");
 		int deptno = sc.nextInt();
 		sc.close();
 		String sql = "SELECT * FROM DEPT WHERE DEPTNO =" + deptno;
 		try {
+			// Class.forName(driver); 1. 드라이버 로드(jdk17에서 생략가능)
 			conn = DriverManager.getConnection(url, "scott", "tiger"); // 2. DB연결
 			stmt = conn.createStatement(); // 3. SQL문 전송 객체
 			rs = stmt.executeQuery(sql); // 4+5. SQL전송 + 결과받기
