@@ -36,10 +36,4 @@
 	- New connections use auto commit mode 체크되어 있음
 -- datetime (날짜+시간) date(only 날짜)
 ------------------------------------------------------------------------------------------------------
-ojdbc6 jdk-17-lib 밑에 넣기
-Database
-8.0.33 - platform indepentdent - Platform Independent (Architecture Independent), ZIP Archive
-다운로드에 압축 풀기
-mysql-connector-j-8.0.33도 jdk-17-lib 밑에 넣기
 
-드라이버 = 클래스라고 생각해

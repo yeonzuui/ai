@@ -4,6 +4,6 @@
 /**
  * 
  */
-module ch17_jdbc_dtoDao {
+module lastEx {
 	requires java.sql;
 }
