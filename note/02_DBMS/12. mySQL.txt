@@ -26,14 +26,9 @@
     		--      %d(01,02,..), %e(1,2,..) 일
     		--      %W monday, %a Mon
     		--      %H(24시), %h(12시), %p(오전, 오후), %i(분), %s(초)
- ⑫ 
- ⑬ 
- ⑭ 
- ⑮ 
+ ⑫ datetime (날짜+시간) date(only 날짜)
+ ⑬ 단축키: ctrl + d 한 줄 복사
+ ⑭ 자동 commit됨(Edit 메뉴 -> Preference 메뉴 -> SQL Execution에서 "auto commit mode" - New connections use auto commit mode 체크되어 있음
 
--- 단축키: ctrl + d 한 줄 복사
--- 자동 commit됨(Edit 메뉴 -> Preference 메뉴 -> SQL Execution에서 "auto commit mode" 선택)
-	- New connections use auto commit mode 체크되어 있음
--- datetime (날짜+시간) date(only 날짜)
-------------------------------------------------------------------------------------------------------
+
 

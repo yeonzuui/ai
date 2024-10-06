@@ -1,0 +1,17 @@
+ ① Web: WWW(World wide web)의 줄임말, 인터넷과 연결된 컴퓨터를 통해 사람들이 정보를 공유하는 할 수 있게 하는 서비스
+ ② 프로토콜(Protocol): 네트워크상에서 약속한 통신규약
+   - Http(HyperText Tranfer -): 정보를 가져와 브라우저 화면상에서 봄
+   - FTP(File Transfer -): 파일을 다운
+   - SMTP, POP: 메일 송수신
+   - DHCP(Dynamic Host Configuration -): 다이나믹하게 사설 ip 분배
+ ③ IP : 네트워크상에서 컴퓨터를 식별할 수 있는 주소
+ ④ DNS : IP주소를 우리가 쉽게 알아볼 수 있게 맵핑한 문자열
+ ⑤ Port : IP주소가 컴퓨터를 식별할 수 있게 해준다면, Port번호는 해당 컴퓨터의 구동되고 있는 프로그램을 구분할 수 있는 번호
+ ⑥ http://www.lec.com:80/abc/def/index.jsp
+   - http : 프로토콜
+   - www.lec.co.kr : 컴퓨터주소(DNS를 통한 IP주소로변경)
+   - 80: 기본적인 포트번호
+   - abc/def/index.jsp : information path
+ ⑦ 웹표준 HTML5 (2014년 10월): 어떠한 브라우저로 접속해도 같은 서비스를 제공하기 위함
+ ⑧ HTML(Hyper Text Markup Language): 웹문서를 기술하는 언어, 태그들로 구성되어 있음
+ ⑨ CSS(Cascading Style Sheets): 정보 전달을 효율적으로 하기 위해 HTML문서를 디자인하는 문서

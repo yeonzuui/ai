@@ -1,0 +1,16 @@
+ ① Sequence: 자동 순차번호 생성기. 인위적인 PK로 사용
+ ② DROP SEQUENCE 시퀀스명: 시퀀스 삭제
+ ③ CREATE SEQUENCE 시퀀스명: 시퀀스 생성
+	START WITH 1
+	INCREMENT BY 1
+	MAXVALUE 999
+	MINVALUE 1
+	NOCHCHE
+	NOCYCLE;
+ ④ START WITH: 시작값(디폴트 1)
+ ⑤ INCREMENT BY : 시퀀스 실행 시 증가시킬 값(디폴트 1)
+ ⑥ MAXVALUE / MINVALUE: 최댓값/최솟값 설정
+ ⑦ NOCACHE/CACHE: 캐시 사용하여 시퀀스 미리 생성해놓을지 여부
+ ⑧ NOCYCLE | CYCLE: 최댓값 도달 시 반복 여부
+ ⑨ 시퀀스명.NEXTVAL: 다음 순차번호 생성
+ ⑩ 시퀀스명.CURRVAL: 현재 값 확인
