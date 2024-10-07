@@ -1,0 +1,19 @@
+ ① DML(Data Manipulation Language): 데이터 검색, 수정 등
+ ② └ INSERT : 데이터베이스 객체에 데이터를 입력
+ ③ └ DELETE : 데이터베이스 객체에 데이터를 삭제
+ ④ └ UPDATE : 기존에 존재하는 데이터베이스 객체 안의 데이터수정
+ ⑤ └ SELECT : 데이터베이스 객체로부터 데이터를 검색
+ ⑥ DDL(Data Definition Language): 데이터와 그 구조를 정의
+ ⑦ └ DROP: 데이터베이스 객체 삭제
+ ⑧ └ CREATE: 데이터베이스 객체 생성
+ ⑨ └ ALTER: 기존 데이터베이스 객체를 재정의
+ ⑩ └ TRUNCATE: 데이터베이스 객체 내용 삭제
+ ⑪ DCL(Data Control Language): 데이터베이스 사용자의 권한 제어
+ ⑫ └ GRANT: 데이터베이스 객체에 권한 부여
+ ⑬ └ REVOKE: 데이터베이스 객체의 권한을 취소
+ ⑭ └ CREATE USER / DROP USER: 사용자 생성 / 제거
+ ⑮ 데이터 딕셔너리 뷰의 종류(데이터 딕셔너리는 확인 불가능): 
+- (1) USER_xxx: 현 계정이 소유하고 있는 객체(테이블, 제약조건, 뷰, 인덱스)
+- (2) ALL_xxx: 현 계정에서 접근 가능한 객체(테이블, 제약조건, 뷰, 인덱스)
+- (3) DBA_xxx: DBA 권한에서만 접근 가능한 객체
+
