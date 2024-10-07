@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        b {
+            color: red;
+        }
+
+        td, p, h2 {
+            text-align: center;
+        }
+        
+        footer #c {
+            margin:0px; padding:0;
+            color: grey;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>회원가입</h2>
+    </header>
+    <nav>
+        <form>
+            <fieldset>
+                <legend>필수입력</legend> <!--유효성 검사 다시 복습하렴.........-->
+                <table id="table1">
+                    <tr>
+                        <td><lable for="name">이름<b id="star">*</b></lable></td>
+                        <td><input type="text" name="name" id="name" placeholder="이름은 2글자 이상" required="required" autofocus="autofocus"/><td>
+                    </tr>
+                    <tr>
+                        <td><lable for>아이디<b id="star">*</b></lable></td>
+                        <td><input type="text" name="id" id="id" placeholder="ID는 4글자 이상" required="required" autofocus="autofocus"/></td>
+                    </tr>
+                    <tr>
+                        <td>비밀번호<b id="star">*</b></td>
+                        <td><input type="text" name="pw" id="pw" required="required"/></td>
+                    </tr>
+                    <tr>
+                        <td>비번확인<b id="star">*</b></td>
+                        <td><input type="text" name="pwChk" id="pwChk"/></td>
+                    </tr>
+                    <tr>
+                        <td>전화<b id="star">*</b></td>
+                        <td><input type="text" name="tel" id="tel" pattern="\d{2,3}-?\d{3,4}-?\d{4}" placeholder="xx-xxx-xxxx/000-0000-0000"/></tdid="a">
+                    </tr>
+                    <tr>
+                        <td>이메일<b id="star">*</b></td>
+                        <td><input type="text" name="email" id="email" pattern="[a-zA-Z가-힣][a-zA-Z0-9가-힣\.]+@[a-zA-Z0-9]+(\.[a-z]+){1,2}" placeholder="id@domain.com또는co.kr"/></td>
+                    </tr>
+                </table>
+                
+            </fieldset>
+            <fieldset>
+                <legend>추가 입력 사항</legend>
+                <table id="table2">
+                    <tr>
+                        <td>결혼유 무</td> <!--lable for 적용하기-->
+                        <td>
+                            <input type="radio" name="marriage" value="기혼" />기혼
+                            <input type="radio" name="marriage" value="미혼" />미혼
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>자식</td> <!--lable for 적용-->
+                        <td>
+                            <input type="checkbox" name="offspring" value="boy" />아들
+                            <input type="checkbox" name="offspring" value="girl" />딸
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>지역</td> <!--selected="select" 기본값 설정-->
+                        <td>
+                            <select name="region">
+                                <option>서울</option><option selected="selected">경기</option><option>대전</option><option>광주</option>
+                                <option>부산</option><option>울산</option><option>강원</option><option>제주</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <p>
+                <input type="submit" value="가입" />
+                <input type="reset" value="취소" />
+                <hr />
+            </p>
+        </form>
+    </nav>
+    <section>
+
+    </section>
+    <footer>
+        <p id="c">서울시 서대문구 신촌로 141 은하빌딩 203호</p>
+        <p id="c">Copyright ⓒ XX All right reserved</p>
+    </footer>
+</body>
+</html>

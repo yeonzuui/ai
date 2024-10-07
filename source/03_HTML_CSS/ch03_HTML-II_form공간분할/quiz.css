@@ -1,0 +1,15 @@
+﻿/*quiz.css*/
+b {
+    color: red;
+}
+
+td, p, h2 {
+    text-align: center;
+}
+
+footer #c {
+    margin: 0px;
+    padding: 0;
+    color: grey;
+    font-size: 12px;
+}
