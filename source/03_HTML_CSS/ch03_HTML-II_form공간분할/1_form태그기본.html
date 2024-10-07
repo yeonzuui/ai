@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    닉네임 : <input type="text" name="nickname" /> <!--form태그 밖의 input은 파라미터 전달 불가-->
+    <!--안치면 내 파일(페이지)로 감-->
+    <!--method(action 파일로 파라미터값 전달하는 방식)의 기본값이 get 방식
+        action url?userid=aaa&userpw=111-->
+    <!--post방식은 파라미터 내용이 url에 전달 안 됨. 길이의 제한이 없음(처리는 jsp에서 배움)-->
+    <form action="" method="get">
+        <table>
+            <tr>
+                <!--parameter: userid, 필수-->
+                <td>아이디</td>
+                <td><input type="text" name="userid" /></td>
+            </tr>
+            <tr>
+                <td>비밀번호</td>
+                <td><input type="password" name="userpw" /></td> <!--password: 암호로 처리-->
+            </tr>
+            <tr>
+                <th colspan="2"> <input type="submit" value="로그인" /></th> <!--th 사이에 text 들어가야 볼드체 처리-->
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

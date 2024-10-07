@@ -1,0 +1,19 @@
+ ① 태그: HTML을 구성하는 요소
+ ② 모든 Tag는 이름과 속성(Attributes)과 속성값(Value) 가진다
+ ③ 열린 태그, 닫힌 태그 ex. <head> </head>
+ ④ HTML 구조
+   (1) <!DOCTYPE html>: 현재 웹 페이지가 HTML5 문서임을 인식
+   (2) <html  lang=”ko”>: html 태그의 시작, lang 속성 입력 가능
+   (3) <head>  …  </head>: head영역은 환경설정에 관한 정보
+   - meta : 웹 페이지에 추가 정보를 전달 ex. <meta charset='utf-8' />
+   - title : 웹 페이지의 제목
+   - script : JavaScript를 포함하여 동적인 html이나 스타일 구현
+   - link : 웹 페이지에 다른 파일을 추가
+   - style : 디자인 영역(CSS) CSS선택자{속성:속성값;}
+ ⑤ <body>  …  </body>: body영역은 사용자에게 보이는 웹 문서 실제 정보
+ ⑥ </html> html 닫힘 태그
+ ⑦ 글자 관련 태그: H1(제목), p(본문), br(개행), a(앵커), b, I, sup, del 태그
+ ⑧ 목록 태그 – ul(순서없음), ol(순서있음), 목록 요소 li는 ul/ol 상관없이 들어감
+ ⑨ 표를 나타내는 태그, table: tr(행), th(열, 제목), td(열)
+ ⑩ 이미지 출력하는 태그, img: src(경로), alt(이미지 없을 때 나오는 글자), width/height
+ ⑪ 오디오 태그, audio: src, preload(재생 전 불러오기), autoplay(자동재생), loop, conrols(재생도구)
