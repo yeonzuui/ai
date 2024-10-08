@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        *{padding: 0; margin: 0;} /*여백 제거, 가운데 정렬*/
+        nav{
+            width:200px; margin: 5px auto;
+        }
+        nav ul li{
+            list-style:none; /*인덱스기호 없애기*/
+            border:1px solid gray; /*실선*/
+            padding:10px 20px; /*안여백*/
+            margin: 2px; /*밖여백*/
+            font-size:24px; /*글자크기*/
+            font-weight: bold; /*볼드체*/
+            text-align:center; /*글자 가운데 정렬*/
+        }
+        nav ul li a{
+            color:black;
+            text-decoration:none; /*밑줄제거*/
+        }
+        nav ul li:nth-child(2n+1){ /*홀수번째 li만 디자인(구조선택자)*/
+            background-color: orange;
+        }
+        nav ul li:nth-child(2n){
+            background-color:yellow;
+        }
+        nav ul li:first-child{ /*첫번째 li 디자인*/
+            border-radius: 20px 20px 0 0 /*경계 둥글게: 왼쪽위부터 시계방향*/
+        }
+        nav ul li:last-child{ /*마지막 li 디자인*/
+            border-radius: 0 0 20px 20px /*경계 둥글게: 왼쪽위부터 시계방향*/
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#1">menu1</a></li>
+            <li><a href="#2">menu2</a></li>
+            <li><a href="#3">menu3</a></li>
+            <li><a href="#4">menu4</a></li>
+            <li><a href="#5">menu5</a></li>
+            <li><a href="#6">menu6</a></li>
+            <li><a href="#7">menu7</a></li>
+            <li><a href="#8">menu8</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

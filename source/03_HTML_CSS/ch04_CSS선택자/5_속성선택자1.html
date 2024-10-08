@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        input{color:green; /*input 태그 글자를 모두 녹색으로*/}
+        input[type='password'] { /*input 태그 중 password 타입에만 선택적 디자인*/
+            color: black;
+        }
+        input[type^='te']{ /*input 태그 중 te로 시작하는 타입에만 선택적 디자인*/
+            width:100px; color:orange;
+        }
+        input[name$='me']{ /*input 태그 중 me로 끝나는 타입에만 선택적 디자인*/
+            border:1px solid red; /*1px 두께의 빨간색 실선 테두리*/
+            padding: 10px; /*안여백(위 우 아래 좌)*/
+        }
+        img[alt]{ /*img 태그 중 속성이 alt인 경우만 선택적 디자인*/
+            width: 50px; border:2px dashed red;
+        }
+    </style>
+</head>
+<body>
+    <form> <!--ctrl+d 한 줄 복사-->
+        이름<input type="text" name="name"/><br />
+        아뒤<input type="text" name="id"/><br />
+        비번<input type="password" name="password"/><br />
+        전화<input type="tel" name="tel"/><br />
+        <img src="ch04/sulhyun.jpg" />
+        <img src="ch04/sulhyun.jpg" alt="설현사진"/>
+        <input type="submit" />
+    </form>
+</body>
+</html>

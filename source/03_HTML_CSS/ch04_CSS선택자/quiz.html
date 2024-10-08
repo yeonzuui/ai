@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .wrap{
+            width: 1000px;
+            margin:0 auto;
+        }
+        #header, #content, #footer{
+            width:1000px; 
+            margin:0;
+            overflow:hidden;
+        }
+        .left, .right {
+            float:left;
+            width:150px; height:150px;
+            background-color:lightgray;
+            border: 1px solid gray;
+        }
+        .center {
+            float:left;
+            width:693px; height:150px;
+            background-color:lightgray;
+            border: 1px solid gray;
+        }
+        #content > div {height:300px;}
+        #header >.left{
+            border-radius:30px 0 30px 0;
+        }
+        #header > .center {
+            border-radius: 0 0 30px 30px;
+        }
+        #header > .right {
+            border-radius: 0 30px 0 30px;
+        }
+        #content > .left {
+            border-radius: 0 30px 30px 0;
+        }
+
+        #content > .center {
+            border-radius: 30px 30px 30px 30px;
+        }
+
+        #content > .right {
+            border-radius: 30px 0 0 30px;
+        }
+        #footer > .left {
+            border-radius: 0 30px 0 30px;
+        }
+
+        #footer > .center {
+            border-radius: 30px 30px 0 0;
+        }
+
+        #footer > .right {
+            border-radius: 30px 0 30px 0;
+        }
+        #nav{
+            overflow:hidden;
+        }
+        .menu1, .menu2, .menu3 {
+            float:left; 
+            padding: 20px 65px 15px 65px;
+            font-size: 30px;
+            font-weight:bold;
+            text-align:center;
+        }
+        #nav a{
+            text-decoration: none;
+            color:black;
+        }
+        #section > .ai {
+            font-size: 30px;
+            font-weight: bold;
+            text-align:center;
+            padding: 17px;
+        }
+        #section > .lipsum {
+            text-align: center;
+        }
+        #content >.right .a{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div id="header">
+            <div class="left"></div>
+            <div class="center"></div>
+            <div class="right"></div>
+        </div>
+        <div id="content">
+            <div class="left"></div>
+            <div class="center">
+                <div id="nav">
+                    <div class="menu1">
+                        <a href="#menu1">menu1</a>
+                    </div>
+                    <div class="menu2">
+                        <a href="#menu2">menu2</a>
+                    </div>
+                    <div class="menu3">
+                        <a href="#menu3">menu3</a>
+                    </div>
+                </div>
+                <div id="section">
+                    <p class="ai">AI 개발자 양성과정</p>
+                    <p class="lipsum">대한민국의 국민이 되는 요건은 법률로 정한다. 군인 또는 군무원이 아닌 국민은 대한민국의 영역안에서는 중대한 군사상 기밀·초병·초소·유독음식물공급·포로·군용물에 관한 죄중 법률이 정한 경우와 비상계엄이 선포된 경우를 제외하고는 군사법원의 재판을 받지 아니한다.</p>
+                </div>
+            </div>
+            <div class="right">
+
+                <ol>
+                    <li>태그</li>
+                    <li>전체(*)</li>
+                    <li>id, class</li>
+                    <li>속성</li>
+                    <li>후손, 자손(>)</li>
+                    <li>동위</li>
+                    <li>반응</li>
+                    <li>상태</li>
+                    <li>구조</li>
+                    <li class="a">문자</li>
+                    <li class="a">링크</li>
+                    <li class="a">부정</li>
+                </ol>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="left"></div>
+            <div class="center"></div>
+            <div class="right"></div>
+        </div>
+    </div>
+</body>
+</html>
