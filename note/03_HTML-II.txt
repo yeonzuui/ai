@@ -1,0 +1,28 @@
+ ① form 태그: 입력양식
+   - action: 입력 데이터의 전달 위치를 지정
+   - method: 입력 데이터의 전달 방식
+     기본값 get은 parameter값을 action 파일의 url로 전달 / post 방식은 전달 X, 길이 제한 X
+form 태그 type들
+   - text(글자), password(*), 
+   - tel(size 설정), number(min/max)
+   - email(이메일), file(파일첨부)
+   - radio(라디오 버튼), checkbox(중복선택O)
+   - select(중복선택X), select(size로 보여지는 선택지 수 조정, ctrl 통해 중복선택O)
+   - button(일반버튼), submit(제출버튼), reset(초기화)
+   - date(날짜선택), url(url 첨부)
+   - color(색상선택), range(슬라이드바로 숫자 선택, min/max/step)
+   - textarea(긴 글 입력, 가로세로는 cols/rows로 조정)
+   - autofocus(포커스 자동 설정), placeholder(입력형식 도움말)
+   - required(필수입력), pattern(정규표현식 조건)
+   - laber for(사용자 인터페이스 높이기 위함)
+ ② 공간분할태그(레이아웃태그)
+     1) div 태그: block 형식으로 공간 분할, 개행 포함
+          id나 class 지정
+     2) 시멘틱 태그: inline 형식으로 공간 분할
+         header, nav, section(=content), footer
+         aside(사이드에 위치하는 공간), article(긴 글)
+
+
+   
+
+   
