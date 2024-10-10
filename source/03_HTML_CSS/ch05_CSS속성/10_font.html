@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--style 위에 Embed code 붙여넣기-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
+    <style>
+        /*메디아 [@]는 반드시 맨 위에*/
+        @font-face {
+            font-family: 'Merriweather-Light'; /*영문폰트*/
+            src: url('ch05/Merriweather-Light.ttf')
+        }
+
+        p:nth-child(1) { /*System font*/
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+        }
+
+        p:nth-child(2) { /*Internet font*/
+            font-family: 'Merriweather-Light', Arial;
+        }
+
+        p:nth-child(3) { /*Web font*/
+            font-family: "Sixtyfour Convergence", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+        p:nth-child(4) {
+            font-family: "Protest Strike", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+    <p>System font</p>
+    <p>Local font(fonts.google.com download ttf파일을 내 프로젝트 폴더 내에 저장)</p> <!--영문에만 적용-->
+    <p>Web font1(fonts.google.com)</p>
+    <p>Web font2(fonts.google.com)</p>
+</body>
+</html>

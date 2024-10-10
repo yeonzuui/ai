@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style> /*url() 용도: 로컬 font 지정, 백그라운드이미지를 지정할 때*/
+        @font-face { /*local font 설정*/
+            font-family: 'NanumAmSeuTeReuDam';
+            src: url('ch05/NanumAmSeuTeReuDam.ttf');
+        }
+        *{font-family:NanumAmSeuTeReuDam, 'Ami R'} /*첫번째 없으면 두번째 폰트 사용*/
+        #wrap{
+            width:600px; margin:0 auto;
+            height:400px;
+            border:1px solid gray;
+        }
+        #wrap > #content{
+            width:80%; height:100%; margin: 0 auto;
+            border:1px solid red;
+            /*background-image: url('ch05/sulhyun.jpg');*/ /*배경이미지*/
+            /*background-repeat: no-repeat;*/ /*여백에 반복 안 해*/
+            /*background-position: center;*/ /*왼쪽 가운데*/
+            background: url('ch05/sulhyun.jpg') center no-repeat; /*한꺼번에 적용 가능*/
+            background-size: 120%; /*사진의 가로사이즈를 #content 영역의 120%로 맞추기, 높이도 자동으로 맞춰짐*/
+            font-size:3em;
+            text-align:center;
+            color:yellow;        
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="content">
+            설현 사진
+        </div>
+    </div>
+</body>
+</html>
