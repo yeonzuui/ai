@@ -1,82 +1,91 @@
-﻿#contain {
-    width: 1000px;
-    margin: 0 auto;
-    padding: 10px;
-    border: 2px solid lightgray;
+﻿﻿ /***** 페이지 초기화 *****/
+* {
+    margin: 0;
+    padding: 0;
 }
 
-    #contain #header {
-        height: 150px;
-        padding: 0;
-        line-height: 150px;
-        box-sizing: border-box;
-        border: 1px solid lightgray;
-        background-color: yellow;
-        text-align: center;
-        font-size: 1.5em;
+a {
+    text-decoration: none;
+    color: purple;
+    font-weight: bold;
+    display: block;
+}
+
+li {
+    list-style: none;
+}
+
+div {
+    border: 1px solid lightgray;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+}
+/***** 페이지 전체를 가운데로 *****/
+#contain {
+    width: 800px;
+    margin: 0 auto;
+}
+/* * * * * * * #header * * * * * * */
+#header {
+    height: 100px;
+    line-height: 100px;
+    background-color: yellow;
+}
+/* * * * * * * #nav * * * * * * */
+#nav {
+    height: 100px; /*높이를 지정하지 않으면 서브메뉴 들어갈 때 넓어짐*/
+}
+
+    #nav p {
+        height: 40px;
+        line-height: 40px;
     }
 
-    #contain #nav {
-        height: 180px;
-        margin: 10px 0 0 0;
-        box-sizing: border-box;
-        border: 1px solid lightgray;
-        text-align: center;
-        font-size: 1.5em;
+    #nav ul {
+        width: 720px; /* ( 140:메뉴하나당width + 4:메뉴하나당 양쪽margin) * 5 = 720 */
+        margin: 0 auto;
         overflow: hidden;
     }
 
-        #contain #nav a {
-            padding: 15px 50px 15px 50px;
-            margin: 0 0 20px 0;
-            text-decoration: none;
-            color: purple;
-            font-weight: bold;
+        #nav ul li {
+            list-style: none;
+            float: left;
+            width: 140px;
+            height: 50px; /* 서브메뉴시 제거할 예정 */
+            line-height: 50px;
             background-color: pink;
-            margin: 5px;
-            float: left;
-            box-sizing: border-box;
-            display: block;
+            margin: 2px;
         }
 
-            #contain #nav a:nth-child(2) {
-                border-radius: 20px 0 0 20px
+            #nav ul li:first-child {
+                border-radius: 20px 0 0 20px;
             }
 
-            #contain #nav a:nth-child(6) {
-                border-radius: 0 20px 20px 0
+            #nav ul li:last-child {
+                border-radius: 0 20px 20px 0;
             }
+/* * * * * * * section * * * * * * */
+#section {
+    /*width:778px; 전체 800px에서 margin과 padding, border 뺀 것*/
+    overflow: hidden;
+}
 
-    #contain #section {
-        border: 1px solid lightgray;
-        margin: 10px 0 0 0;
-        overflow: hidden;
+    #section #content {
+        width: 578px; /* 578 + 10(좌우margin) + 10(좌우padding) + 2(좌우border)=600px 필요 */
+        height: 200px;
+        float: left;
     }
 
-        #contain #section #content {
-            float: left;
-            margin: 10px 0 10px 10px;
-            width: 580px;
-            height: 300px;
-            border: 1px solid lightgray;
-            text-align: center;
-            font-size: 1.5em;
-        }
-
-        #contain #section #banner {
-            float: left;
-            margin: 10px;
-            width: 380px;
-            height: 300px;
-            border: 1px solid lightgray;
-            text-align: center;
-            font-size: 1.5em;
-        }
-
-    #contain #footer {
-        height: 150px;
-        line-height: 150px;
-        font-size: 1.5em;
-        text-align: center;
-        background-color: yellow;
+    #section #banner {
+        width: 156px; /* 778-600 = 178에서 22(좌우margin, padding, border)빼면 156px 필요*/
+        height: 200px;
+        float: left;
     }
+/* * * * * * * footer * * * * * * */
+#footer {
+    height: 100px;
+    line-height: 100px;
+    background-color: yellow;
+}
+/* * * * * * * background image * * * * * * */
