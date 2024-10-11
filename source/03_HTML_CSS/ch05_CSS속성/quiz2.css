@@ -25,6 +25,7 @@ div {
 #contain {
     width: 800px;
     margin: 0 auto;
+    position: relative; /*background-image(자식)가 contain(부모) 벗어나지 않게*/
 }
 /* * * * * * * #header * * * * * * */
 #header {
@@ -33,9 +34,7 @@ div {
     background-color: yellow;
 }
 /* * * * * * * #nav * * * * * * */
-#nav {
-    height: 100px; /*높이를 지정하지 않으면 서브메뉴 들어갈 때 넓어짐*/
-}
+
 
     #nav p {
         height: 40px;
@@ -52,7 +51,7 @@ div {
             list-style: none;
             float: left;
             width: 140px;
-            height: 50px; /* 서브메뉴시 제거할 예정 */
+            /*height: 50px;*/ /* 서브메뉴시 제거할 예정 */
             line-height: 50px;
             background-color: pink;
             margin: 2px;
@@ -89,3 +88,28 @@ div {
     background-color: yellow;
 }
 /* * * * * * * background image * * * * * * */
+#background_image {
+    position: absolute;
+    left: 0;
+    right: 100px;
+    top:0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: url('ch05/sulhyun.jpg') no-repeat;
+    background-size: 150%;
+    z-index: -9999;
+    opacity: 0.3;
+}
+/* * * * * * * submenu * * * * * * */
+#nav {
+    height: 130px; /*높이를 지정하지 않으면 서브메뉴 들어갈 때 넓어짐*/
+    position: relative; /*z인덱스 적용 위함*/
+    z-index: 9999;
+}
+.submenu{display:none;}
+#nav ul li:hover .submenu {
+    display: block;
+}
+#nav ol{margin:0; padding:0;}

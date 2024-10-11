@@ -1,0 +1,105 @@
+﻿/*header.css*/
+/* * * * * 페이지 초기화 * * * * */
+@font-face { /*local font*/
+    font-family: 'PlayfairDisplay-Regular';
+    src: url('../font/PlayfairDisplay-Regular.ttf'); /*css 파일 위치를 기준으로, 상위폴더로 [..]*/
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "PlayfairDisplay-Regular", Consolas;
+    font-size:97%;
+}
+a{
+    text-decoration:none;
+    color:black;
+    display:block;
+}
+li{list-style:none;}
+
+/* * * * * header .gnb * * * * */
+#header .gnb{
+/*    width:100% 부모태그 영역 전부 씀, 굳이 안 적어도 돼*/ 
+    background-color:black;
+}
+#header .gnb ul{
+    width:1000px; 
+    margin: 0 auto;
+    height:30px; 
+    line-height:30px;
+}
+#header .gnb ul li{
+    float:left;
+    width:80px;
+    margin:0 10px; /*옆마진*/
+    text-align:center;
+/*    border:1px solid yellow; 확인용*/
+/*    box-sizing:border-box; 확인용*/
+}
+#header .gnb ul li a{
+    color:white;
+}
+
+/* * * * * header .logo * * * * */
+#header .logo { /*웹폰트 적용*/
+    font-family: "Londrina Sketch", sans-serif;
+    font-style: normal;
+    width: 200px;
+    height: 100px;
+    line-height:100px;
+    margin:30px auto;
+    text-align:center;
+    border:1px solid gray;
+    font-size: 2em;
+}
+
+/* * * * * header .hitmenu * * * * */
+#header .hitmenu ul{
+    width:1000px;
+    margin:3px auto;
+    overflow:hidden;
+}
+#header .hitmenu ul li{
+    float:right;
+    border: 1px solid black;
+}
+#header .hitmenu ul li a{
+/*    width:90px;
+    height:40px;
+    line-height:40px;
+    text-align:center;*/
+    padding:10px 30px;
+}
+
+#header .hitmenu ul li:first-child{
+    border-radius: 0 10px 10px 0;
+}
+#header .hitmenu ul li:last-child{
+    border-radius: 10px 0 0 10px;
+}
+
+/* * * * * header .lnb * * * * */
+#header .lnb {
+    border-top: 1px dashed gray;
+    border-bottom: 1px dashed gray;
+    box-sizing: border-box;
+}
+#header .lnb ul {
+    width: 1000px;
+    margin: 0 auto;
+    height: 30px;
+    line-height: 30px;
+/*    border:1px solid blue;
+    box-sizing:border-box;*/
+    
+}
+#header .lnb li a{
+    color: black;
+    float:left;
+    width:115px;
+    margin: 0 5px;
+    text-align:center;
+    font-weight:bold;
+/*    border:1px solid red;*/
+/*    box-sizing:border-box;*/ 
+}

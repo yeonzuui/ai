@@ -1,0 +1,29 @@
+﻿/*footer.css*/
+
+#footer{
+    width:1000px;
+    margin:0 auto;
+    overflow:hidden;
+}
+
+#footer .office_logo, 
+#footer .office_address,
+#footer .shopping_info{
+    float:left;
+    border:1px solid gray;
+    width: 333.3333333333333333333333333333px;
+    height:100px;
+    margin:10px 0;
+    box-sizing:border-box;
+}
+
+#footer .copyright{
+    clear:both;
+    background-color:black;
+    margin: 0 0 10px 0;
+    height: 30px;
+    line-height: 30px;
+    color: white;
+    text-align:center;
+    font-weight:lighter;
+}

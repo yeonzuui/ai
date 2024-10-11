@@ -19,7 +19,7 @@
         }
         #wrap #content1{
             width:400px; height:180px; background-color:red;
-            position: relative;
+            position: absolute;
             top:10px; left:10px;
             z-index:99; /*z인덱스가 큰 값이 위로*/
         }
@@ -40,8 +40,8 @@
 <body>
     <div id="contain">
         <div id="header">HEADER</div>
-        <div id="wrap">
-            <div id="content1">content1</div>
+        <div id="wrap"> <!--부모-->
+            <div id="content1">content1</div> <!--자식-->
             <div id="content2">content2</div>
         </div>
         <div id="footer">FOOTER</div>

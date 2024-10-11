@@ -1,37 +1,7 @@
- ① 
- ② 
- ③ 
- ④ 
- ⑤ 
- ⑥ 
- ⑦ 
- ⑧ 
- ⑨ 
- ⑩ 
- ⑪ 
- ⑫ 
- ⑬ 
- ⑭ 
- ⑮ 
-
-    - color(글자색), background-color(배경색)
-    - font-size(글자크기): 1.5em;(원래 크기의 1.5배), 200%(원래 크기의 200%)
-    - font-weight:bold;(볼드체)
-    - text-decoration:none;(밑줄제거)
-    - text-align: center; (글자 가운데 정렬)
-    - text-align: justify; (글자 양쪽 정렬)
-    - border(테두리): solid(실선), dashed(점선)
-    - margin(밖여백) / padding(안여백): 위부터 시계방향 순서
-    - border-radius: 모서리 둥글게(왼쪽 위부터 시계방향순)
-    - width(너비, 설정 시 border 공간 고려하기), height(높이)
-    - list-style:none; <ul> <li>의 bullet 같은 기호 없앰
-    - overflow:hidden; 너비 벗어나면 내용 숨김, block 요소들을 수평으로 나란히 배치하고 싶을 때 부모 태그에 설정
-    - float: left/right; 왼쪽/오른쪽 정렬
-    - clear:both; float 속성 해제
-
-1. CSS3 단위들: em(배수 개념), %, px(픽셀), pt(포인트)
+ ① CSS3 단위들: em(배수 개념), %, px(픽셀), pt(포인트)
    - 문자 4px = 문자 3pt
-2. url() 함수: background-image,  local font 지정 시 사용
+
+ ② url() 함수: background-image,  local font 지정 시 사용
    - background-image: url('ch01/sulhyun.jpg'); 배경이미지
    - background-repeat:no-repeat; 남는 공간에 반복 삽입하지 않음
    - background-position: center; 가운데 정렬
@@ -40,27 +10,34 @@
    - @font-face{}: 사용자가 가지고 있지 않은 온라인 폰트도 웹페이지에서 사용할 수 있게 함
    - font-family: 'NanumAmSeuTeReuDam'; 폰트 설정
    - src: url(ch05/NanumAmSeuTeReuDam.ttf); 폰트가 정의된 경로를 설정
-3. display: 화면에 어떻게 보여질지 설정
+
+ ③ display: 화면에 어떻게 보여질지 설정
    - inline: div/p/li 태그, 기본값, 요소 앞뒤로 줄바꿈 X, 즉 나란히 붙음
    - block: span 태그, 요소 앞뒤로 줄바꿈 O
    - inline-block: 요소는 inline, 내부는 box처럼 표시, box모양이 inline처럼 옆으로 늘어섬
    * float:left와의 차이: inline-block은 space나 enter 같은 공백을 인식
    - none: box 생성 안 됨. 따라서 보이지 않고, 공간도 사라짐
-4. visibility: display:none;처럼 안 보이지만 공간은 남아있다는 점에서 차이 
-5. opacity(투명도): 0(default, 불투명)~1(완전투명), 소수점 가능
+
+ ④ visibility: display:none;처럼 안 보이지만 공간은 남아있다는 점에서 차이 
+
+ ⑤ opacity(투명도): 0(default, 불투명)~1(완전투명), 소수점 가능
    - 배경에 적용하면 그 위의 텍스트도 투명해짐
-6. margin과 padding: 밖여백과 안여백, width 지정 시 여백 고려해야 해
-7. box-sizing: border를 box 안으로
+
+ ⑥ margin과 padding: 밖여백과 안여백, width 지정 시 여백 고려해야 해
+
+ ⑦ box-sizing: border를 box 안으로
    - box-sizing:initial; = content-box 콘텐트 영역을 기준으로 한 width(기본값)
    - box-sizing:border-box; border를 포함한 width
-8. border: 테두리
+
+ ⑧ border: 테두리
    - border-top:1px solid red; 윗 테두리에 1px 빨간 실선
    - border-bottom:1px dashed blue; 아래 테두리에 1px 파란 점선
    - border-width:2px; 테두리 굵기 2px
    - border-top-style:solid; 윗 테두리 스타일 실선
    - border-right-style:dotted; 오른쪽 테두리 초록색 도트선
    - border-color:green; 테두리 색깔 초록색
-9. 글자관련 속성: , , , , , , 
+
+ ⑨ 글자관련 속성
    - line-height: 줄이 차지하는 높이(행 간격 조정하거나, 상하 가운데 정렬 시 사용)
    - text-align: 글자정렬, left(왼쪽정렬), right(오른쪽정렬), justify(양쪽정렬)
    - text-decoration: underline(밑줄), none(밑줄제거)
@@ -68,12 +45,14 @@
    - font-weight: bold(볼드체)
    - font-family: 폰트 설정
    - font-size: 글자 크기(em, %, px, pt)
-10. 폰트(,  )
+
+ ⑩ 폰트
    - @font-face는 반드시 style 맨 위에 위치
    - Web font: 인터넷만 연결되어 있다면 방문자에게 제공 가능, 웹사이트를 방문하는 순간, 웹폰트를 다운받아 웹사이트를 구성(웹 경로를 통해 제공)
    - Local font: 웹에 있는 폰트를 사용자의 로컬 환경(컴퓨터)에 다운로드하여 적용하는 폰트
    - System font: 사용자 시스템에 기본으로 설치된 폰트
-11. position
+
+ ⑪ position
    - absolute: 부모(조상) 요소를 기준으로 배치
    - fixed: 뷰포트 기준으로 배치
    - static: 기준 없음 (배치 불가능 / 기본값)
@@ -81,7 +60,8 @@
    - relative와 absolute 혼합: z-index가 작은 값이 아래에, 큰 값이 위에 위치
    - Top, Bottom, Left, Right 속성: 기준점으로부터 거리 설정하여 요소의 위치를 조정
    - 자식태그는 부모태그의 포지션을 따름
-12. float: left(왼쪽 붙이기), right(오른쪽 붙이기)
+
+ ⑫ float: left(왼쪽 붙이기), right(오른쪽 붙이기)
    - 이미지와 텍스트를 혼합 정렬할 시에는 부모 태그에 overflow:hidden; 안 하면 돼
 
 
