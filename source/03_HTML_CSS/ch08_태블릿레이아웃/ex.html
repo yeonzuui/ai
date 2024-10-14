@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+        }
+        /* * * * * #top_bar * * * * */
+        #top_bar{
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            background-color: #ffd800;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+        #top_bar ul{
+            overflow: hidden;
+        }
+        #top_bar ul li{
+            float: left;
+            width: 16.66%;
+            border-right: 1px dotted gray;
+            box-sizing: border-box;
+            font-size: 1.5em;
+        }
+        /* * * * * #left_bar * * * * */
+        #left_bar{
+            width: 200px;
+            text-align: center;
+            background-color: saddlebrown;
+            position: fixed;
+            left: 0;
+            top: 100px;
+            bottom: 100px;
+        }
+        #left_bar ul li a{
+            display: block;
+            padding: 10px;
+            border-bottom: 1px solid gray;
+        }
+        /* * * * * #right_bar * * * * */
+        #right_bar{
+            width: 200px;
+            text-align: center;
+            background-color: lightyellow;
+            position: fixed;
+            right: 0;
+            top: 100px;
+            bottom: 100px;
+        }
+        #right_bar img{
+            width: 120px;
+        }
+        /* * * * * #bottom_bar * * * * */
+        #bottom_bar{
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            position: fixed;
+            background-color: lightyellow;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+        /* * * * * #content * * * * */
+        #content{
+            padding: 110px 210px 110px 210px;
+            text-align: justify;
+        }
+        #content img{
+            float: left;
+            margin-right: 10px;
+        }
+    </style>
+    <script>
+        
+    </script>
+</head>
+<body>
+    <div id="top_bar">
+        <ul>
+            <li><a href="#m1">GNB1</a></li> <!--shift + alt + ↓: 한 줄 복사-->
+            <li><a href="#m2">GNB2</a></li>
+            <li><a href="#m3">GNB3</a></li>
+            <li><a href="#m4">GNB4</a></li>
+            <li><a href="#m5">GNB5</a></li>
+            <li><a href="#m6">GNB6</a></li>
+        </ul>
+    </div>
+    <div id="left_bar">
+        <ul>
+            <li><a href="#m">LNB_01</a></li>
+            <li><a href="#m">LNB_02</a></li>
+            <li><a href="#m">LNB_03</a></li>
+            <li><a href="#m">LNB_04</a></li>
+            <li><a href="#m">LNB_05</a></li>
+            <li><a href="#m">LNB_06</a></li>
+            <li><a href="#m">LNB_07</a></li>
+            <li><a href="#m">LNB_08</a></li>
+            <li><a href="#m">LNB_09</a></li>
+            <li><a href="#m">LNB_10</a></li>
+        </ul>
+    </div>
+    <div id="right_bar">
+        <ul>
+            <li>
+                <a href="http://daum.net">
+                    <img src="https://cdn.iconscout.com/icon/free/png-256/free-daum-285192.png?f=webp" 
+                            alt="다음">
+                </a>
+            </li>
+            <li>
+                <a href="http://google.com">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968863.png" 
+                            alt="구글">
+                </a>
+            </li>
+            <li>
+                <a href="http://daum.net">
+                    <img src="https://cdn.iconscout.com/icon/free/png-256/free-daum-285192.png?f=webp" 
+                            alt="다음">
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div id="bottom_bar">
+        <p>Copyright ⓒ Joeun System Corp., ALL RIGHT RESERVED. </p>
+    </div>
+    <div id="content">
+        <img src="https://via.placeholder.com/100x100" alt="더미 이미지">
+        <p>
+            What is Lorem Ipsum?
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            
+            Why do we use it?
+            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+            
+            
+            Where does it come from?
+            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+            
+            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+        </p>
+    </div>
+</body>
+</html>

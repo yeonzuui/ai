@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title></title>
+    <script>
+        /*int i = 10;  i = 90; i = '홍길동';*/
+        var al_pha = 20; // al_pha 전역변수에 20을 할당(변수 선언과 초기화를 한 번에)
+        alert(1);
+        console.log('al_pha값은', al_pha); 
+        alert(2);
+        al_pha = '홍길동';
+        alert(3);
+        console.log('바뀐 al_pha는' + al-pha); // 고의적인 error
+        alert(4);
+        console.log('끝');
+        alert(5);
+    </script>
+</head>
+<body>
+    <script>
+        document.write('윗 스크립트에서 선언된 변수 al_pha =' + al_pha);
+    </script>
+</body>
+</html>

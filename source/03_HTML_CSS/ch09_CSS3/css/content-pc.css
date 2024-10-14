@@ -1,0 +1,8 @@
+/* pc 스크린용 .content */
+.content{
+    background-color: darkgreen;
+    color:yellow;
+    padding:30px;
+    text-align: justify;
+    
+}

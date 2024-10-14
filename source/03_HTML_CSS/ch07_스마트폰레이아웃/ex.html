@@ -1,0 +1,280 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <!--Viewport 설정: meta 태그-->
+    <meta name="viewport" content="width=device-width, initial-scale=.1.0,
+          user-scalable=yes, maximum-scale=2.0, minimum-scale=0.7" />
+    <title></title>
+    <style>
+        /* * * * * 페이지 초기화 * * * * */
+        *{
+            margin:0; padding:0;
+        }
+        li{
+            list-style:none;
+        }
+        a {
+            text-decoration: none;
+            display: block; /*a 태그공간이 li만큼 확장*/
+            /*말줄임(ellipsis) 태그: [...]*/
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        /* * * * * header * * * * */
+        header{
+            height:100px;
+            background-color:#ea8f00;
+        }
+        /* * * * * header의 #logo_wrap * * * * */
+        header #logo_wrap{
+            height:50px; 
+            line-height:50px;
+            text-align:center;
+            position:relative; /*자식태그를 부모태그 내 위치시키기 위한 용도*/
+        }
+        header #logo_wrap img.menu{
+            position:absolute;
+            top:0;
+            left:10px;
+        }
+        header #logo_wrap img.myinfo{
+            position:absolute;
+            top:0;
+            right:10px;
+        }
+        header #logo_wrap a{
+            color:white;
+            font-size:1.5em;
+            font-weight:bold;
+        }
+        /* * * * * header의 #search * * * * */
+        header #search{
+            position:relative;
+        }
+        header #search input[type='text']{
+            width:100%;
+            height:50px;
+            border:3px solid #ea8f00;
+            box-sizing:border-box;
+            outline: 3px solid #ea8f00;
+            padding:10px 60px 10px 10px;
+        }
+        header #search input[type='submit']{
+            background: url('ch07/search.png') no-repeat;
+            width:50px;
+            height:50px;
+            border:0;
+            outline:0;
+            position:absolute;
+            right:0;
+            top:0;
+        }
+        /* * * * * #lnb * * * * */
+        #lnb ul{
+            overflow:hidden;
+            margin:7px 0; /*상하만 밖여백*/
+        }
+        #lnb ul li{
+            float:left;
+            width:16.66%; /*너비 단위는 %로*/
+            text-align:center;
+            height:30px;
+            line-height:30px;
+            border-right:1px solid #ea8f00;
+            box-sizing:border-box;
+            font-weight:bold;
+        }
+        #lnb ul li:last-child{
+            border:0;
+        }
+        /* * * * * section의 #section1 * * * * */
+        section #section1 .row1,
+        section #section1 .row2,
+        section #section1 .row3{
+            overflow:hidden;
+        }
+        section #section1 .row1 > div,
+        section #section1 .row2 > div,
+        section #section1 .row3 > div{
+            float:left;
+            width:50%;
+            height:120px;
+            border:2px solid white;
+            box-sizing:border-box;
+        }
+        section #section1 img{
+            width:100%;
+            height:inherit; /*부모 높이 상속*/
+        }
+        /* * * * * section의 #section2 * * * * */
+        section #section2{
+            margin: 7px 2px;
+        }
+        section #section2 ul li{
+            padding:8px;
+            border:1px solid lightgray;
+            box-sizing:border-box;
+            /*말줄임(ellipsis) 태그: [...]*/
+            /*white-space:nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;*/
+        }
+        /* * * * * section의 #section3 * * * * */
+        section #section3 ul li{
+            border:1px solid gray;
+            box-sizing:border-box;
+            margin:7px;
+            padding:10px;
+            position:relative;
+            height:120px;
+        }
+        section #section3 ul li p.img{
+            position:absolute;
+            top:10px;
+            left:10px;
+        }
+        section #section3 ul li p.txt{
+            padding-left:120px;
+        }
+        section #section3 p.txt span:first-child{
+            display:block;
+            font-weight:bold;
+            font-size:1.2em;
+            color:darkblue;
+            /*말줄임(ellipsis) 태그*/
+            white-space:nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
+        }
+        /* * * * * footer * * * * */
+        footer{
+            background-color:#ea8f00;
+            text-align:center; /*그림도 가운데*/
+        }
+        footer p:last-child{
+            padding: 0 0 10px 0;
+            font-size:0.8em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="logo_wrap">
+            <img class="menu" src="ch07/menu.png" alt="메뉴 아이콘"/>
+            <a class="logo" href="ex.html">mobile logo</a>
+            <img class="myinfo" src="ch07/myinfo.png" alt="내정보아이콘" />
+        </div>
+        <div id="search">
+            <form action="#">
+                <input type="text" name="query_word" />
+                <input type="submit" value=""/>
+            </form>
+        </div>
+    </header>
+    <div id="lnb">
+        <ul>
+            <li><a href="#">lnb1</a></li>
+            <li><a href="#">lnb2</a></li>
+            <li><a href="#">lnb3</a></li>
+            <li><a href="#">lnb4</a></li>
+            <li><a href="#">lnb5</a></li>
+            <li><a href="#">lnb6</a></li>
+        </ul>
+    </div>
+    <section>
+        <div id="section1">
+            <div class="row1">
+                <div>
+                    <a href="https://gallery.v.daum.net/p/viewer/379/qXpMUtFOxW">
+                        <img src="https://t1.daumcdn.net/news/202410/14/kppa/20241014101021576wsra.jpg"
+                             alt="1행 1열" />
+                    </a>
+                </div>
+                <div>
+                    <a href="https://v.daum.net/v/20241014094647817">
+                        <img src="https://img2.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202410/14/chosunbiz/20241014094650658nvoz.jpg"
+                             alt="1행 2열" />
+                    </a>
+                </div>
+            </div>
+            <div class="row2">
+                <div>
+                    <a href="https://v.daum.net/v/20241014100031367">
+                        <img src="https://img1.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202410/14/mbn/20241014100033709zpoe.jpg"
+                             alt="2행 1열" />
+                    </a>
+                </div>
+                <div>
+                    <a href="https://v.daum.net/v/20241014080802991">
+                        <img src="https://img4.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202410/14/dailian/20241014100007870ivbh.png"
+                             alt="2행 2열" />
+                    </a>
+                </div>
+            </div>
+            <div class="row3">
+                <div>
+                    <a href="https://v.daum.net/v/20241014101631015">
+                        <img src="https://img1.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202410/14/chosunbiz/20241014101631872eyss.jpg"
+                             alt="3행 1열" />
+                    </a>
+                </div>
+                <div>
+                    <a href="https://post.naver.com/viewer/postView.naver?volumeNo=39319494&memberNo=65232351&utm_source=dable&utm_medium=cpc&utm_campaign=%EB%AC%B4%ED%83%9D%EB%B3%B4%EC%95%88+2%EC%B0%A8+%EC%9C%A0%EC%9E%85&utm_content=%EC%9D%B4%EB%B9%84%EC%9D%B8%ED%9B%84%EA%B3%BC+%EC%9D%98%EC%82%AC%EA%B0%80+%EC%95%8C%EB%A0%A4%EC%A3%BC%EB%8A%94+%EC%BD%94%EA%B3%A8%EC%9D%B4+%ED%95%B4%EA%B2%B0%EB%B0%A9%EB%B2%95&ecid=7hu7qcnOZKL36WSF9NNPDYn5SEbfb1ZSbQXIAJZhGjM&request_id=bfd97d4e-19d4-4f00-b740-2bafc101d301">
+                        <img src="https://archive.is/XDhRq/ee494f23c2878b552fc037151d73d0acdf1b00a9.png"
+                             alt="3행 2열" />
+                    </a>
+                </div>
+            </div>
+        </div><!--#section1-->
+        <div id="section2">
+            <ul>
+                <li>
+                    <a href="https://v.daum.net/v/20241014092619993">
+                        유재석도 OO은 못 참지..자기관리 무너진 '런닝맨' 멤버들?(종합)
+                    </a>
+                </li>
+                <li>
+                    <a href="https://v.daum.net/v/20241014091347576">
+                        내용이 짧은 것과 긴 것을 섞어서 놔요. 내용이 길면 말줄임 태그를 사용해서 뒷부분 대신 ...으로 대치할 예정입니다.
+                    </a>
+                </li>
+                <li>
+                    <a href="https://v.daum.net/v/04trENj4O0">
+                        김종민, 11살 연하 여자친구 얼굴 공개
+                    </a>
+                </li>
+                <li>
+                    <a href="https://v.daum.net/v/20241014103319871">
+                        [자막뉴스]‘최태원·노소영 차녀’ 최민정 결혼식에 총출동한 재계총수들
+                    </a>
+                </li>
+            </ul>
+        </div><!--#section2-->
+        <div id="section3">
+            <ul>
+                <li>
+                    <p class="img"><img src="ch07/100img.png" /></p>
+                    <p class="txt">
+                        <span>첫번째 span 내용은 말줄임을 할 예정입니다. block타입으로 전환할 예정입니다</span>
+                        <span>두번째 span 내용은 말줄임을 안 할 예정입니다. 한 줄 이상의 내용은 다음줄로.</span>
+                    </p>
+                </li>
+                <li>
+                    <p class="img"><img src="ch07/100img.png" /></p>
+                    <p class="txt">
+                        <span>첫번째 span 내용은 말줄임을 할 예정입니다. block타입으로 전환할 예정입니다</span>
+                        <span>두번째 span 내용은 말줄임을 안 할 예정입니다. 한 줄 이상의 내용은 다음줄로.</span>
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section><!--#section3-->
+    <footer>
+        <p><img src="ch07/logo.png" alt="회사로고"/></p>
+        <p>서울시 땡땡구 뭐뭐로 12, 2F(아무동, xx빌딩)</p>
+    </footer>
+</body>
+</html>
