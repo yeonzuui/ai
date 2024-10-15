@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        // 기본객체(내장객체, 7장)
+        window.onload = function(){ // 브라우저 window창이 load되었을 때 실행
+            let list = '';
+            list += '<ul>';
+            list += ' <li>HTML</li>';
+            list += ' <li>JAVASCRIPT</li>';
+            list += '</ul>';
+            // document.write(list); 기존의 body내용 덮어씀
+            document.body.innerHTML += list; // 기존 body 불러오기
+        };
+    </script>
+</head>
+<body>
+    <h2>자바스크립트 첫 날</h2>
+</body>
+</html>

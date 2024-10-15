@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        // 자료형: string, number, boolean, function, object(array), undefined
+        var va;
+        document.write("1. va 타입>>> " + typeof(va) +" - 값>>> " + va + "<br>");
+        va = "이름은 '홍길동'입니다";
+        document.write("2. va 타입>>> " + typeof(va) +" - 값>>> " + va + "<br>");
+        va = -1232456.2; // type 달라지면(string->number) 기존 변수 삭제하고 새로 생성
+        document.write("3. va 타입>>> " + typeof(va) +" - 값>>> " + va + "<br>");
+        va = false;
+        document.write("4. va 타입>>> " + typeof(va) +" - 값>>> " + va + "<br>");
+        va = function (){
+            alert('함수'); // 호출 아니고 할당
+        }; // 할당할때는 [;]
+        document.write("5. va 타입>>> " + typeof(va) +" - 값>>> " + va + "<br>");
+        // va(); 호출
+        // int arr = {1, 2}; java때는 array 중괄호 
+        va = [1, 2, 3]; // 배열
+        document.write("6. va 타입>>> " + typeof(va) +" - 값>>> " + va + "<br>");
+        va = {'name':'홍길동', 'age':20}; 
+        document.write("7. va 타입>>> " + typeof(va) +" - 값>>> " + va + "<br>"); // 값 출력X
+        /* class Person{
+            private String name;
+            private int age;
+        }
+            Person hong = new Person("홍길동", 20);*/
+        </script>
+</head>
+<body>
+    
+</body>
+</html>

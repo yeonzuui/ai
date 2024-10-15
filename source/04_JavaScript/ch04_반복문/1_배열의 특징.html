@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        // JavaScript에서의 배열: 1) 방의 크기가 가변적 2) 자료의 집합(동일 자료형 아니어도 됨)
+        var arr = [1, 2, '홍길동', true, function(){alert(1);}, [1,2]];
+        // {0:1, 1:2, 2:'홍길동', 3:true, 4:function(){alert(1);}, 5:[1,2]}
+        document.write("arr의 type은 " + typeof(arr) + ' 값은 ' + arr + '<br>');
+        document.write("arr의 방의 개수는 " + arr.length + '<br>');
+        // int[] arr = {1,2,3}  java의 array는 length 불변
+        arr.push(66); // arr 마지막 인덱스 뒤에 66 추가
+        arr.unshift(0); // arr 배열 0번째에 추가, 기존 방들은 shift
+        document.write('<hr>');
+        document.write("추가된 arr의 type은 " + typeof(arr) + ' 값은 ' + arr + '<br>');
+        document.write("추가된 arr의 방의 개수는 " + arr.length + '<br>');
+        var value = arr.pop(); // 마지막 인덱스의 값을 return하고 삭제
+        document.write('<hr>');
+        document.write('pop한 value값은 ' + value);
+        document.write("pop된 arr의 type은 " + typeof(arr) + ' 값은 ' + arr + '<br>');
+        document.write("pop된 arr의 방의 개수는 " + arr.length + '<br>');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

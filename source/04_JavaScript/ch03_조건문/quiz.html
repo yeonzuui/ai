@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <style>
+        p, h3{
+            text-align: center;
+        }
+        fieldset{
+            width: 300px;
+            margin: 0 auto;
+        }
+    </style>
+    <script>
+        function chk(){
+            //form.num1.value, form.num1.value에 수를 입력했는가?
+            if(!form.num1.value){
+                alert('첫 번째 수를 입력하세요');
+                form.num1.focus();
+                return false;
+            }else if (!form.num2.value){
+                alert('두 번째 수를 입력하세요');
+                form.num2.focus();
+                return false;
+            }else{
+                // |첫번째수 - 두번째수| msg 생성 "<h3>두번째 수가 10만큼 큽니다</h3>"
+                var msg;
+                // form.num1.value = 첫번째 입력한 수
+                // form.num2.value = 두번째 입력한 수
+                // number type으로 입력받아도 string으로 인식, 아스키코드순 비교함
+                var num1 = Number(form.num1.value);
+                var num2 = parseInt(form.num2.value);
+                // 1. 3항연산자 이용
+                let difference = (num1 > num2) ? (num1-num2) : (num2-num2);
+                if(num1 > num2){
+                    msg = "<h3> 첫 번째 수가 " + difference + "만큼 큽니다</h3>"
+                }else if(num2 > num1){
+                    msg = "<h3> 두 번째 수가 " + difference + "만큼 큽니다</h3>"
+                }else if(num1 = num2) {
+                    msg = "<h3>첫 번째 수와 두 번째 수는 같습니다</h3>"
+                }
+                // message를 body 끝과 alert 창에 출력
+                document.body.innerHTML += msg;
+                msg_alert = msg.substring(4, msg.indexOf('</h3>')); 
+                alert(msg_alert);
+                return true;
+
+                // 2. Math.abs() 절댓값 함수 이용
+                // if(num1 > num2){
+                //     msg = "<h3> 첫 번째 수가 " + Math.abs(num1-num2) + "만큼 큽니다</h3>"
+                //     document.body.innerHTML += msg;
+                // }else if(num2 > num1){
+                //     msg = "<h3> 두 번째 수가 " + Math.abs(num2-num1) + "만큼 큽니다</h3>"
+                //     document.body.innerHTML += msg;
+                // }else if(num1 = num2) {
+                //     msg = "<h3>첫 번째 수와 두 번째 수는 같습니다</h3>"
+                //     document.body.innerHTML += msg;
+                // }
+                // msg1 = msg.substring(4, msg.indexOf('</h3>')); 
+                // alert(msg1);
+                // return true;
+
+                // 3. 
+                
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <fieldset>
+        <form name="form" onsubmit="return chk()">
+            <p>
+                <label for="num1">첫 번째 수 </label>
+                <input type="number" name="num1" id="num1" />
+            </p>
+            <p>
+                <label for="num2">두 번째 수 </label>
+                <input type="number" name="num2" id="num2" />
+            </p>
+            <p>
+                <input type="submit" value="결과">
+            </p>
+        </form>
+    </fieldset>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        var cnt = 0; //횟수
+        var startTime = new Date().getTime();// 현재 시점의 밀리세컨 1조7천억...
+        while(new Date().getTime() <= startTime + 1000){
+            cnt++;
+        }
+        document.write('횟수: ' + cnt + '번<br>');
+        // '10909979' → '10,909,979'
+        var cntStr = String(cnt); // String(): string으로 형변환하는 함수
+        var temp = cntStr.length % 3;
+        for(var idx = 0 ; idx<cntStr.length ; idx++){
+            if(temp == 0){
+                if(idx != 0){
+                    document.write(',');
+                }
+                temp = 3;
+            }
+            document.write(cntStr[idx]);
+            temp --;
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

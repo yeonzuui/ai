@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        answer = confirm('이름이 홍길동입니까?');
+        document.write('결과: 타입 ' + typeof(answer) + " / 정답? " + answer + '<br>');
+        // == ; 타입이 일치하지 않을 경우 일치시켜서 비교한 후 같으면 true
+        // === ; 값과 타입이 일치해야만 true(많이 사용)
+        // if(1 == true){
+        // if( 1 === true){
+        if( answer === true){
+            document.write('확인을 누르셨네');
+        }else{
+            document.write('취소를 누르셨네');
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

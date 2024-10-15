@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        // 사용자로부터 국어, 영어점수 입력받아 국, 영, 평균을 출력
+        // prompt, Number 또는 parseInt 함수 이용
+        // parseInt() 이용
+        do{
+            var korStr = prompt('국어 점수를 입력하세요(0-100)');
+            kor = parseInt(korStr);
+        // kor가 NaN, kor가 0 미만, 100초과일 때 반복
+        }while(isNaN(kor) || kor < 0 || kor > 100 );
+        
+        do{
+            var engStr = prompt('영어 점수를 입력하세요(0-100)');
+            eng = parseInt(engStr);
+        }while(isNaN(eng) || eng < 0 || eng > 100 )
+        
+        // Number() 이용
+        // let kor, eng;
+        // do{
+        //     korStr = prompt('국어 점수를 입력하세요(0-100)');
+        //     kor = Number(korStr);
+        // }while(!korStr || !korStr.trim() || isNaN(kor) || kor < 0 || kor > 100);
+        
+        // do{
+        //     engStr = prompt('영어 점수를 입력하세요(0-100)');
+        //     eng = Number(engStr);
+        // }while(!engStr || !korStr.trim() || isNaN(eng) || eng < 0 || eng > 100);
+
+        document.write('입력한 국어 점수는> ' + korStr + '<br>');
+        document.write('입력한 영어 점수는> ' + engStr + '<br>');
+        document.write('평균 점수는 ' + (kor + eng)/2);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

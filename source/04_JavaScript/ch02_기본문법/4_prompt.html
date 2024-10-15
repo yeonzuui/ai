@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        let scoreStr = prompt('점수를 입력하세요', '0-100'); // type은 무조건 string
+        document.write('scoreStr의 type: ' + typeof(scoreStr) + ' / 값: ' + scoreStr  + '<br>');
+        // Number(): 숫자로 형변환하는 함수
+        // let score = Number(scoreStr); // "99" → 99, "a" → NaN(Not a Number), " " → 0
+        // parseInt(): Int로 형변환하는 함수
+        // "99" → 99, "a" → NaN(Not a Number), " " → NaN, null(취소시) → NaN
+        let score = parseInt(scoreStr); 
+        document.write('score의 type: ' + typeof(score) + ' / 값: ' + score + '<br>');
+        
+        // isNaN(): 괄호 안이 NaN인가? 
+        if(!isNaN(score)){ 
+            msg = score >= 80 ? "잘했어요" : "분발하세요";
+            document.write(msg);
+        }else{
+            document.write('점수를 입력하세요');
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
