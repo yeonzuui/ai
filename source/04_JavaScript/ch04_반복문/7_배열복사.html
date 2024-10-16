@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        // 배열함수들: forEach(배열반복), push(배열추가), slice(배열추출), splice(배열제거or대체)
+        let arr = ['가','라','나','라','다','라'];
+        // array.slice(from, to): 원본을 바꾸지 않고 from부터 to 앞까지 추출
+        let copyArr = arr.slice(1, 5); // 1~4까지 추출
+        copyArr = arr.slice(2, -2); 
+        document.write('원본 arr: ' + arr + '<br>');
+        document.write('복사본 arr: ' + copyArr + '<br>');
+        arr = ['가','라','나','라','다','라'];
+        copyArr = arr; // 얕은 복사
+        copyArr[0] = '바꿈';
+        document.write('<hr>');
+        document.write('원본 arr: ' + arr + '<br>');
+        document.write('(얕은)복사본 arr: ' + copyArr + '<br>');
+        copyArr = arr.slice(0, arr.length); // 깊은 복사
+        copyArr = [...arr]; // 깊은 복사
+        copyArr = Array.from(arr); // 깊은 복사
+        copyArr[0] = '또바꿈';
+        document.write('<hr>');
+        document.write('원본 arr: ' + arr + '<br>');
+        document.write('(깊은)복사본 arr: ' + copyArr + '<br>');
+    </script>
+</head>
+<body>
+</body>
+</html>

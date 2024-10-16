@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        // var i = Number(prompt('i의 j제곱을 구하려는데 i값은?'));
+        // var j = Number(prompt('j값은?'));
+        // document.write('i(' + i + ')의 j(' + j + ')제곱은? ' + pow(i, j) + '<br>'); Test용
+
+        // 1. 선언된 매개변수 개수를 초과하여 호출
+        document.write('pow(2, 3, 10, 100)= ' + pow(2, 3, 10, 100) + '<br>');
+        document.write('pow(2, 3, 10)= ' + pow(2, 3, 10) + '<br>');
+        document.write('<hr>');
+
+        // 2. 선언된 매개변수 개수 미만으로 호출
+        document.write('pow(2)= ' + pow(2) + '<br>');
+        document.write('pow()= ' + pow() + '<br>');
+        
+        function pow(x, y){ // x의 y제곱을 return
+            var result = 1;
+            for(let cnt=1 ; cnt<=y ; cnt++){
+                result *= x;
+            }
+            // return result;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        // 선언적 함수의 호출은 선언 위에 위치해도 우선 실행됨
+        fun();
+        document.write(fun + '<br>');
+        // 기본 내장 함수의 코드[native code]는 확인 불가
+        document.write(alert + '<br>');
+        function fun(){
+            alert('함수');
+        }
+        // 선언적 함수 재정의 + 출력/호출
+        function fun(){
+            alert('재정의된 함수');
+        }
+        document.write(fun + '<br>')
+        fun();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

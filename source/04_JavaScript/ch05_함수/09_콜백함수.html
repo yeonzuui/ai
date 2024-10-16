@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        // 콜백함수: 매개변수에 들어온 함수
+        function callTenTimes(callback){
+            for(var i=0 ; i<10 ; i++){
+                callback(); //콜백함수
+            }
+        }
+        // // 매개변수(callback)로 사용할 함수(funVar) 생성
+        // var funVar = function(){
+        //     document.write(new Date() + '<br>');
+        // };
+        // funVar;
+        // // 콜백함수(callTenTimes) 호출
+        // // 매개변수(callback)는 반드시 함수(funVar)여야 해
+        // // callTenTimes 함수는 특정 함수를 10번 실행하는 함수
+        // callTenTimes(funVar);
+
+        // 자기호출함수로도 가능
+        callTenTimes(() => document.write(new Date() + '<br>'));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

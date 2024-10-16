@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        // 변수에는 반드시 익명함수
+        var funVar = function(i, j){
+            alert('함수표현식을 이용한 익명함수 값들: ' + i + ',' + j);
+        }; 
+        document.write(funVar + '<br>');
+        funVar(10, 20); // 익명함수 호출: 변수명()
+
+        // 익명함수 재정의 + 출력/호출 (overloading 불가)
+        funVar = (i, j) => {
+            alert('화살표함수를 이용한 익명함수 값들: ' + i + ',' + j)
+        };
+        document.write(funVar + '<br>');
+        funVar(5, 6);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

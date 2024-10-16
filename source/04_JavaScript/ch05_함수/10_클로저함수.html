@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        // 클로저함수: return된 함수
+        function test(name){
+            var msg = 'Hello, ' + name + '님 방가방가';
+            // var fun = function(){
+            //     alert(msg);
+            // };
+            // return fun; // 클로저함수
+            return () => alert(msg); // 일반함수 가독성 ㄴㄴ 통상 화살표함수 사용
+        }
+        // var variable = test('홍길동') // variable은 alert(msg)하는 함수
+        // variable(); Hello, 홍길동님 방가방가
+
+        test('홍길동')(); // 자기호출
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
