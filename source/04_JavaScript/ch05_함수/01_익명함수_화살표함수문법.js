@@ -21,10 +21,10 @@ let funVar = function(){
   funVar = function (i, j) {
     return i*10 + j;
   }
-  funVAr = (i, j) => i*10 + j; // 위 함수표현식과 동일
+  funVar = (i, j) => i*10 + j; // 위 함수표현식과 동일
   console.log('6. return이 있는 화살표 함수 호출: ' + funVar(1, 2));
   funVar = function(x){
     return x*x;
   }
-  funVar = x => x*x; // 람다함수
+  funVar = x => x*x; // 파이썬에서의 lambda함수
   console.log('7. 매개변수 1개, return이 있는 화살표 함수 호출: ' + funVar(5));

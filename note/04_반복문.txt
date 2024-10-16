@@ -1,15 +1,48 @@
- ① 
- ② 
- ③ 
- ④ 
- ⑤ 
- ⑥ 
- ⑦ 
- ⑧ 
- ⑨ 
- ⑩ 
- ⑪ 
- ⑫ 
- ⑬ 
+ ① 배열의 특징
+   - 방의 크기가 가변적 
+   - 자료의 집합(동일 자료형 X): {1, '홍길동', true, function(){}, [1,2]}
+   - 숫자, 문자, true/false, 함수, 배열까지도 한 배열에 포함될 수 있다
+   - 문자열이 배열과 유사: str = 'abcd' // str = ['a','b','c','d']
+
+ ② 배열 선언 및 할당: var array = [273, 32, '홍길동'];
+
+ ③ 배열 출력 방법
+   - 1) 일반 for문 (java와 동일)
+   - 2) for-in문 (object와 array에 사용): 배열의 인덱스를 받음
+   for(var idx in arr){
+            document.write(idx + '번째 idx: ' + arr[idx]);
+   };
+   - 3) for-of문 (java의 확장 for문과 비슷): 인덱스는 접근 불가
+   for(var data of arr){
+            document.write(data);
+   };
+   - 4) forEach 함수(1): array
+   arr.forEach(function(data, idx){
+            document.write(idx + data);
+   });
+   - 5) forEach 함수(2): array
+   arr.forEach(function(data){
+            document.write(data);
+   });
+
+ ④ 배열함수
+   - forEach(배열 반복)
+   - push(배열 추가)
+   - slice(from, to):원본을 바꾸지 않고 [from]부터 [to-1]까지 추출
+   - splice(배열 제거 or 대체)
+
+ ⑤ 배열복사
+   - 1) 얕은 복사: copy에서 값을 수정하면 원본도 바뀜
+   arr = ['가','라','나','라','다','라'];
+   copyArr = arr;
+   - 2) 깊은 복사(방법 3개): copy에서 값을 수정해도 원본 불변
+   - slice()           > copyArr = arr.slice(0, arr.length);
+   - ...arr              > copyArr = [...arr];
+   - Array.from() > copyArr = Array.from(arr);
+
+ ⑥ 배열대체
+   - splice(idx, cnt): [idx]번째부터 [cnt]개 제거
+   - splice(idx, cnt, 대체값): 제거하고 해당 자리에 대체값 삽입
+   - for문으로 배열을 splice하여 출력할 때 나머지 인덱스들이 shift된다는 점을 고려해야 함
  ⑭ 
  ⑮ 
