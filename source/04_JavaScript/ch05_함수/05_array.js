@@ -22,6 +22,6 @@ function array(){
 }
 var arr = array();
 console.log('array()= ' + array());
-console.log('array(5)= ' + array(5));
+console.log('array(5)= ' + array(4));
 console.log('array(1, 2, 13)= ' + array(1, 2, 13));
 console.log('array(1, 2, 3, "hello")= ' + array(1, 2, 3, "hello"));

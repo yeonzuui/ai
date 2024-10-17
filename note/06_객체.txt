@@ -1,0 +1,36 @@
+ ① 
+ ② 
+ ③ 
+ ④ 
+ ⑤ 
+ ⑥ 
+ ⑦ 
+ ⑧ 
+ ⑨ 
+ ⑩ 
+ ⑪ 
+ ⑫ 
+ ⑬ 
+ ⑭ 
+ ⑮ 
+
+반정형 데이터 형태
+1. *.csv
+name, age
+'홍길동', 22
+'김길동', 31
+
+2. *json
+[{'name':'홍길동', 'age':'22'},
+{'name':'김길동', 'age':'31'}]
+
+3. *xml (기상청 사용)
+<person>
+   <name>홍길동</name>
+   <age>22
+</person>
+<person>
+   <name>김길동</name>
+   <age>31
+</person>
+4. *xlxs

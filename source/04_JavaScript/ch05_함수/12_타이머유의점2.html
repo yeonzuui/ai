@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        // 경고창: 3 → 3 → 3 => 0 → 1 → 2
+        // 방법1. i를 지역변수로
+        // 방법2. 자기호출함수 이용
+        for(var i=0 ; i<3 ; i++){
+            (function(a){ // a는 지역변수, let과 동일한 효과
+                setTimeout(() => alert(a), 0);
+            })(i);
+        }
+        // 방법3. 배열이용
+        [0, 1, 2].forEach((data, idx) => {
+            setTimeout(() => alert(data), 0);
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

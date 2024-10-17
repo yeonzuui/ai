@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        // 생성자함수명은 반드시 대문자로 시작
+        // 자바와 달리 변수의 type 없음
+        function Student(name, kor, mat, eng, sci){
+            this.name = name;
+            this.kor  = kor;
+            this.mat  = mat;
+            this.eng  = eng;
+            this.sci  = sci;
+            this.getSum = function(){
+                return this.kor + this.mat + this.eng + this.sci;
+            };
+            this.getAvg = function(){
+                return this.getSum()/4; // java에서는 4.0
+            };
+            this.toString = function (){
+                var output = '';
+                for(let key in this){
+                    if(key != 'getSum' && key!='getAvg' && key != 'toString'){
+                        output += key + ': ' + this[key] + ' ';
+                    }else if(key == 'getSum'){
+                        output += key.substring(3) + ': ' + this[key]() + ' ';
+                    }else if(key == 'getAvg'){
+                        output += key.substring(3) + ': ' + this[key]() + '\n';
+                    }//if
+                }//for
+                return output;
+            }
+        }
+        // 객체배열(students) 만들고, 생성자함수(Student)로 배열데이터 삽입
+        // 방법1
+        let students = [new Student('함길동', 90, 95, 94, 96),
+                        new Student('함길동', 90, 95, 94, 96),
+                        new Student('함길동', 90, 95, 94, 96),
+                        new Student('함길동', 90, 95, 94, 96),
+                        new Student('함길동', 90, 95, 94, 96),
+        ];
+        // 방법2
+        students.push(new Student("성춘향", 99, 66, 88, 77));
+        
+        // 출력
+        students.forEach((idx, data) => {
+            document.write(data + '번째>  ' + idx + '<br>');
+        });
+
+        // 배열 마지막 인덱스값 제거 .pop(); 쉬운거니까 ㄱㄴㄱㄴ
+        students.pop(); 
+        students.pop(); 
+        students.pop();
+
+        document.write('<h3>pop 후</h3>');
+        students.forEach(idx => document.write(idx + '<br>'));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

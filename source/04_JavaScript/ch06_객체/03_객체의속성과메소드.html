@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        let name = '홍길동';
+        let fun = function(){};
+        let person = {
+            'name': '홍길동',
+            'age':  22,
+            eat : function(food){ // 객체 내 메소드에서는 this 키워드 생략 불가
+                let msg = this.age +  '살 [' + this.name + ']님은 ' + food + '을(를) 먹습니다';
+                alert(msg);
+            },
+        };
+        document.write(person['name'] + '<br>'); // access 시에는 속성변수에 '' 필수 
+        person.eat("맛있는 점심");
+
+        document.write(person + '<br>'); // Java에서 sysout(person.toString())
+        document.write(person.toString());
+        alert(person);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

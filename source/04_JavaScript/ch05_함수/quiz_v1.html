@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+  <style>
+    body{
+      background-size: 100%;
+    }
+  </style>
+  <script>
+    let sec = 0; // 1초 지날때 마다 증가
+    let col = ['#FFFF00', '#000000', '#FFFFFF', ];
+    // 이미지 파일이 저장된 배열
+    let img = [
+      'url(ch05_img/img01.png)', 
+      'url(ch05_img/img02.png)', 
+      'url(ch05_img/img03.png)', ];
+    let timeId = setInterval(()=>{
+      document.body.innerHTML = '<h4>' + new Date() + '</h4>';
+      document.body.style.backgroundImage = img[sec%img.length];
+      document.body.style.color = col[sec%col.length];
+      sec++;
+    }, 1000);
+    setTimeout(()=>{
+      clearInterval(timeId);
+      document.body.innerHTML += sec + '초 지나서 중지함'
+    }, 10000);
+  </script>
+</head>
+<body>
+</body>
+</html>

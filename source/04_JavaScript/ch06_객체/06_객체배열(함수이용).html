@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        // 객체를 생성하는 함수(makeStudent) 생성
+        // 오타로 인해 함수 결과 undefined 되는 것 방지 위함
+        let students = [makeStudent("홍길동", 96, 92, 99, 87),
+                        makeStudent("홍길동", 96, 92, 99, 87),
+                        makeStudent("홍길동", 96, 92, 99, 87)
+        ];
+        students.push(makeStudent("홍길동", 96, 92, 99, 87));
+        students.push(makeStudent("홍길동", 96, 92, 99, 87));
+        students.forEach(data => document.write(data + '<hr>'));
+        function makeStudent(name, kor, mat, eng, sci){
+            let result = {
+                'name': name, 
+                'kor': kor, 
+                'mat': mat, 
+                'eng': eng, 
+                'sci': sci, 
+                'getSum':function(){
+                        return this.kor + this.mat + this.eng + this.sci;
+                },
+                'getAvg' :  function(){
+                        return this.getSum()/4; // java에서는 4.0
+                },
+                'toString' :function (){
+                var output = '';
+                        for(let key in this){
+                            if(key != 'getSum' && key!='getAvg' && key != 'toString'){
+                                output += key + ': ' + this[key] + ' ';
+                            }else if(key == 'getSum'){
+                                output += key.substring(3) + ': ' + this[key]() + ' ';
+                            }else if(key == 'getAvg'){
+                                output += key.substring(3) + ': ' + this[key]() + '\n';
+                            }//if
+                        }//for
+                        return output;
+                },
+            };
+            return result;
+        };
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

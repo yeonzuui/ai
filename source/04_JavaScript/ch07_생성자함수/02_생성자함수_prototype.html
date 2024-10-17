@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        // 생성자 함수: 객체 생성
+        // 생성자 함수명은 반드시 대문자로 시작 (Student)
+        // java와 달리 변수의 type 없음
+        function Student(name, kor, mat, eng, sci){
+            this.name = name;
+            this.kor  = kor;
+            this.mat  = mat;
+            this.eng  = eng;
+            this.sci  = sci;    
+        }
+
+        // 생성자 함수(Student)의 공통영역(prototype)에 함수(메소드) 위치시키기
+        Student.prototype.getSum = function(){
+            return this.kor + this.mat + this.eng + this.sci;
+        };
+        Student.prototype.getAvg = function(){
+            return this.getSum()/4; // java에서는 4.0
+        };
+        Student.prototype.toString = function (){
+            var output = '';
+            for(let key in this){
+                if(key != 'getSum' && key!='getAvg' && key != 'toString'){
+                    output += key + ': ' + this[key] + ' ';
+                }else if(key == 'getSum'){
+                    output += key.substring(3) + ': ' + this[key]() + ' ';
+                }else if(key == 'getAvg'){
+                    output += key.substring(3) + ': ' + this[key]() + '\n';
+                }//if
+            }//for
+            return output;
+        }
+
+        // 객체배열(students)
+        // 생성자함수(Student)를 이용해 객체데이터를 배열로 삽입
+        // sol 1)
+        let students = [new Student('함길동', 90, 95, 94, 96),
+                        new Student('함길동', 90, 95, 94, 96),
+                        new Student('함길동', 90, 95, 94, 96),
+                        new Student('함길동', 90, 95, 94, 96),
+                        new Student('함길동', 90, 95, 94, 96),
+        ];
+        // sol 2)
+        students.push(new Student("성춘향", 99, 66, 88, 77));
+        
+        // 출력
+        students.forEach((data, idx) => { // 순서 고정(param명은 마음대로)
+            document.write(idx + '번째>  ' + data + '<br>');
+        });
+
+        // 배열 마지막 인덱스값 제거 .pop();
+        students.pop(); 
+        students.pop(); 
+        students.pop();
+
+        document.write('<h3>pop 후</h3>');
+        students.forEach(data => document.write(data + '<br>'));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

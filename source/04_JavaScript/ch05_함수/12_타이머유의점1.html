@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        // 수행 순서 A - C - B
+        // 타이머 수행 순서는 body 수행하고 마지막에 수행
+        document.write('<p>A</p>');
+        setTimeout(() => {
+            document.body.innerHTML += '<p>B</p>'; // 브라우저에 순서대로 나타내기
+        }, 0);
+        document.write('<p>C</p>');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
