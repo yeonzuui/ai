@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        var arr1 = new Array('big', 'zaa' , 'abz', 'abc'); //['big', 'zaa' , 'abz', 'abc']
+        var arr2 = [52, 100, 12, 94, 32];
+        document.write('arr1의 정렬 전: ' + arr1 + '<br>');
+
+        // sort(): 원본 배열이 훼손됨
+        // 깊은 복사(방법 3가지)
+        let arr1Copy = arr1.slice();
+        let arr2Copy = [...arr2];
+        arr2Copy = Array.from(arr2);
+
+        // 문자는 ascii 코드 순 정렬 
+        arr1Copy.sort(); 
+
+        // arr1, arr1Copy 비교
+        document.write('arr1: ' + arr1 + '<br>');  
+        document.write('arr1Copy: ' + arr1Copy + '<br>');  
+
+        // 숫자 오름차순(default는 ascii 코드 순)
+        arr2Copy.sort(function(left, right){
+            return left - right; 
+        });
+        // arr2, arr2Copy 비교
+        document.write('arr2: ' + arr2 + '<br>');
+        document.write('arr2Copy(오름차순): ' + arr2Copy + '<br>');
+
+        // 숫자 내림차순 
+        // sol1) reverse
+        arr2Copy.reverse();
+        document.write('arr2: ' + arr2 + '<br>');
+        document.write('arr2Copy(내림차순): ' + arr2Copy + '<br>');
+        // sol2) 
+        arr2Copy.sort(function(left, right){
+            return right - left; 
+        });
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

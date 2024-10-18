@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        var cnt = 0;
+        // alert, confirm 등 우리가 일반함수처럼 사용한 함수는 window 객체 안의 메소드
+        for(var key in window){
+            if(key=='onload' || key=='chk'){
+                document.write(++cnt + key + ': ' + window[key] + '<br>');
+            }
+        }
+        document.write('<hr>');
+
+        // on~~ : 이벤트 속성 변수
+        window.onload = function(){
+            alert('윈도우가 로드됨');
+
+        }
+        
+        var chk = function(){}; // 함수
+        for(var key in window){
+            if(key == 'onload' || key == 'chk'){
+                document.write(key + ": " + window[key] + '<br>');
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        var child = open('', 'childWin', 'width=1000, height=400') // childWin이름의 새창 open
+
+        if(!child){
+            alert('팝업 차단 요망');
+        }
+    </script>
+</head>
+<body>
+    <button onclick="openWin()">새창열기</button>
+    <br>
+    <a href="http://www.google.com" target="childWin">구글로</a>
+</body>
+</html>

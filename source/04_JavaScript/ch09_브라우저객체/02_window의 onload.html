@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        // onload: 윈도우 다 load되고 마지막에 실행
+        // 원래 null값
+        window.onload = () => {
+            document.body.innerHTML += '<h1>Process - 4</h1>';
+        }
+    </script>
+</head>
+<body>
+    <h1>Process</h1>
+    <script>
+        document.body.innerHTML += '<h1>Process-2</h1>';
+    </script>
+    <h1>Process-3</h1>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script src="dateIntervalDay.js"></script>
+    <script>
+        var now = new Date();
+        document.write("now: " + now + '<br>');
+        // locale
+        // 사용자 인터페이스에서 사용되는 언어, 지역 설정, 출력 형식 등을 정의
+        document.write('날짜 시간: ' + now.toLocaleString() + '<br>');
+        document.write('날짜: ' + now.toLocaleDateString() + '<br>');
+        document.write('시간: ' + now.toLocaleTimeString() + '<br>');
+
+        var limitDay = new Date(2025, 2, 7, 18, 0, 0); // 3월7일
+        var openDay = new Date(2024, 7, 26, 9, 30, 0); // 8월 26일
+        // 시스템의 월은 0월부터 시작)
+
+        document.write('수료일: ' + limitDay.toLocaleString() + '<br>');
+        // 기간 계산
+        // 함수 없으면 js에서는 만들 수 있음
+        document.write('오늘~수료일: ' + now.getIntervalDay(limitDay) + '<br>');
+        document.write('시작일~오늘: ' + now.getIntervalDay(openDay) + '<br>');
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

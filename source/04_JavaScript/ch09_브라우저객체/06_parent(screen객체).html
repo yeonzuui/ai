@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        var child = open('06_child(center).html', '', 'width=10, height=10');
+        let childWidth = screen.width/2;
+        let childHeight = screen.height/2;
+        let childLeft = screen.width/4;
+        let childtop = screen.height/4;
+
+        // child의 사이즈 조정
+        child.resizeTo(childWidth, childHeight);
+        // child의 위치 조정
+        child.moveTo(childLeft, childtop); 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

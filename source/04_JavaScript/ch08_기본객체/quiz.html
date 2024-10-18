@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style>
+table {width:350px; margin:20px auto; padding:20px 10px;}
+table, input[type='text'], input[type='password'] {
+    border: 1px solid #385d81;
+outline: 1px solid #385d81;
+    padding: 2px;
+}
+input[type='submit'], input[type='reset'], input[type='button'], button{
+    background-color: #385d81;
+    border:0; outline:0;
+    color:white; 
+    border-radius: 3px;
+    padding:10px 20px;
+    margin:5px;
+}
+td, th { padding:5px 10px; text-align:center;}
+</style>
+<script>
+    // 패턴 변수 선언
+    var patternName = /^([a-zA-Z]{2,})|([가-힣]{2,})$/;
+    var patternMail = /[a-zA-Z0-9\.]+@[a-zA-Z0-9]+(\.[a-z]+){1,2}/;
+    var PatternPw = /[/[~`!@#$%^&*()_\-+=\|\\\[\]{}'";;?\/<>,\.a-zA-Z\d{4,}]/;
+
+    function chk (){
+        if(!frm.name.value.match(patternName)){
+            alert('올바른 이름 형식이 아닙니다');
+            frm.name.focus;
+            return false;
+        }else if(frm.mail.value && !patternMail.test(frm.mail.value)){
+            alert('올바른 메일 형식이 아닙니다');
+            frm.mail.focus;
+            return false;
+        }else if(!PatternPw.test(frm.pw.value)){
+            alert('올바른 비밀번호 형식이 아닙니다');
+            frm.pw.focus;
+            return false;
+        }else if(frm.pw.value != frm.pwchk.value){
+            alert('비밀번호가 일치하지 않습니다');
+            frm.pwchk.focus;
+            frm.pwChk.value = "";
+            return false;
+        }
+        return true;
+    }
+</script>
+</head>
+<body>
+<form name="frm" onsubmit="return chk()">
+<table>
+    <tr>
+    <th>이름</th>
+    <td>
+        <input type="text" name="name" placeholder="특수문자와 숫자 못 와" 
+                    autofocus="autofocus"/>
+    </td>
+    </tr>
+    <tr>
+    <th>메일</th>
+    <td><input type="text" name="mail" placeholder="메일 형식에 맞추세요" /></td>
+    </tr>
+    <tr>
+    <th>비밀번호</th>
+    <td><input type="password" name="pw" placeholder="특수문자,알파벳,숫자 포함" /></td>
+    </tr>
+    <tr>
+    <th>비밀번호</th>
+    <td><input type="password" name="pwchk" placeholder="4글자 이상" /></td>
+    </tr>
+    <tr>
+    <td colspan="2">
+        <input type="submit" value="회원가입" />
+        <input type="reset" value="취소" />
+        <input type="button" value="로그인" />
+    </td>
+    </tr>
+</table>
+</form>
+</body>
+</html>

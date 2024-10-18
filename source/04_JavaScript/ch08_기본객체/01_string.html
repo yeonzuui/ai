@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        var str = 'abc@abc@abc';
+        document.write('원본: ' + str + '<br>');
+        document.write('글씨 길이: ' + str.length + '<br>');
+        document.write('문자 연결' + str.concat(str) + '<br>');
+        
+        // substring(a, b): a번째부터 b-1번째까지 추출
+        // substring(a): a번째부터 끝까지 추출
+        // substr(a, b): a번째부터 문자 b개를 추출
+        document.write('3번째부터 6번째 앞까지: ' + str.substring(3, 6) + '<br>');
+        document.write('3번째부터 6개: '  + str.substr(3,6) + '<br>');
+        
+        // 문자 찾기, indexOf(앞에서부터), lastIndexOf(끝에서부터)
+        document.write('@가 나오는 인덱스? ' + str.indexOf('@') + '<br>');
+        document.write('@가 나오는 인덱스? ' + str.lastIndexOf('@') + '<br>');
+
+        // 공백 제거
+        str = '      hong    @hong.com ';
+        document.write('trim(): ' + str + '<br>'); 
+        // trim은 가운데 공백은 제거 못해
+
+        // 교체, replace(첫번째만), replace(전부)
+        document.write('replace: ' + str.replace(' ', '★') + '<br>');
+        document.write('replaceAll: ' + str.replaceAll(' ', '☆') + '<br>');
+        // console 아니라서 space 여러 개를 한 칸으로 처리
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
