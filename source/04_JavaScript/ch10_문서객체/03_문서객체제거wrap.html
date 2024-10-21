@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <style>
+        span{
+            color:red;
+        }
+        </style>
+    <script>
+        // wrap에 추가(body에 추가하면 wrap뒤에 추가됨)
+        var wrap;
+        window.onload = function(){
+            // wrap = document.getElementById('wrap'); sol 1
+            // wrap = document.getElementsByTagName('div'); sol 2
+            wrap = document.querySelector('div#wrap'); // sol 3
+            // wrap = document.querySelectorAll('div#wrap')[0]; sol 4
+        }
+        function append(){
+            // 마지막에 h1태그 추가(wrap에)
+            // wrap.innerHTML += '<h1>HEADER</h1>'; sol 3
+            var h1 = document.createElement('h1'); // sol 1
+            var textNode = document.createTextNode('HEADER');
+            h1.appendChild(textNode);
+            wrap.appendChild(h1);
+            // h1태그에 #추가
+            var header = document.querySelectorAll('h1');
+            for(var idx in header){
+                header[idx].innerHTML += '<span>#</span>';
+            }
+        }
+        function remove(){
+            // 첫번째 h1태그(#wrap에 있는) 하나 제거(취소 가능하면 삭제, 취소 불가능하면 제거)
+            // var h1 = document.getElementsByTagName('h1');
+            var h1 = document.querySelectorAll('h1'); // 배열로 return
+            if(h1.length > 0){
+                wrap.removeChild(h1[0]);
+            }else{
+                alert('지울 h1태그가 없습니다');
+            }
+        }
+        function removeAll(){
+            // h1태그 모두 제거
+            var h1 = document.getElementsByTagName('h1');
+            // var h1 = document.querySelectorAll('h1'); // 더 자주 사용
+            let cnt = h1.length;
+            // sol 1) query로 갖고오면 shift 안 돼(복사본 갖고 있음)
+            // 일반 for문
+            // for(var idx=0 ; idx<cnt ; idx++){
+            //     document.body.removeChild(h1[idx]);
+            // }
+            // sol 1-1) TagName으로 갖고오면 [0] 지워야 해
+            for(var idx=0 ; idx<cnt ; idx++){
+                wrap.removeChild(h1[0]);
+            }
+            // for-in문은 되긴 하는데 에러뜸
+            // sol 2) 맨 끝번째 idx부터 없애기, 일반 for문 사용
+            // for(var idx=cnt-1 ; idx>=0 ; idx--){
+            //     document.body.removeChild(h1[idx]);
+            // }
+        }
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <button onclick="removeAll()">h1태그 모두 제거</button>
+        <button onclick="remove()">h1태그 하나 제거</button>
+        <button onclick="append()">h1태그 하나 추가</button>
+        <h1>HEADER</h1>
+        <h1>HEADER</h1>
+    </div>
+</body>
+</html>

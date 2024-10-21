@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        window.onload = function(){
+            // id로 가져오기 document.getElementById('id명'): 요소 하나 return
+            // class로 가져오기 document.getElementsByClassName('class명'): 배열 return
+            var clock1 = document.getElementsByClassName('clock1');
+            clock1[0].innerHTML = new Date().toLocaleDateString();
+            clock1[1].innerHTML = new Date().toLocaleTimeString();
+            var clock2 = document.getElementsByClassName('clock2')[0]; // 0번째 idx만 불러오기
+            clock2.value = new Date().toLocaleTimeString();
+
+            // document.body.style = 'background-color: lightyellow'; sol 1 
+            document.body.style.backgroundColor = 'lightyellow'; // sol 2, 편하긴 한데 간혹 에러남
+            // clock2.style = 'color:red; font-size:2em;'; sol 1
+            clock2.style.color = 'red'; // sol 2
+            clock2.style.fontSize = '2em';
+        }
+    </script>
+</head>
+<body>
+    <h1 class="clock1 clockh1"></h1>
+    <p class="clock1"clock1p></p>
+    <input type="text" class="clock2">
+</body>
+</html>

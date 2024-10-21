@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <style>
+        p{
+            text-align: center;
+        }
+    </style>
+    <script>
+    function openConfirm(){
+        var child = open('05_confirm.html', '', 'width=500, height=200');
+        if(!child){
+        alert('팝업 차단 해제 요망');
+        }
+    }
+    function again(){
+        document.getElementById('confirmed').value = 0;
+    }
+    function chk(){
+        var idconfirm = document.getElementById('confirmed');
+        if(idconfirm.value != '1'){
+            alert('ID 중복확인을 하셔야 합니다');
+            idconfirm.focus();
+            return false;
+        }
+        return true;
+    }
+    </script>
+</head>
+<body>
+    <form onsubmit="return chk()"> <!--중복될 시 parent id에 안 뜨도록-->
+        <input type="hidden" name="confirmed" id="confirmed" value="0"> 
+        <p>
+            아이디 <input type="text" name="id" id="id" onkeyup="again()">
+            <input type="button" value="중복확인" 
+            onclick="openConfirm()">
+        </p>
+        <p>
+            <input type="submit" value="회원가입">
+        </p>
+    </form>
+</body>
+</html>

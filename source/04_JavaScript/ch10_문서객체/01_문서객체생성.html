@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        window.onload = function(){
+            // sol 1) ①h1태그 생성 ②textNode생성 ③textNode를 h1에 연결 ④h1태그를 body에 추가
+            var h1 = document.createElement('h1'); // let으로 생성해도 무관
+            var textNode = document.createTextNode('추가한 h1태그 안의 text');
+            h1.appendChild(textNode);
+            document.body.appendChild(h1);
+            // sol 2) ①img태그 생성 ②src속성변경, alt속성변경 ③img태그를 body에 추가
+            var img = document.createElement('img'); 
+            img.setAttribute('src', 'ch10_img/red.jpg');
+            img.setAttribute('alt', '체리');
+            document.body.appendChild(img);
+            // sol 3) innerHTML을 이용(생성이라기 보다 body에 html을 추가)
+            // 오류날 때도 있어
+            document.body.innerHTML += '<h1>sol 3으로 추가</h1>';
+        };
+    </script>
+</head>
+<body>
+    <h1>Text Node</h1>
+    <img src="ch10_img/orange.jpg" alt="오렌지" /> <!--닫는 태그 필요X, 속성O-->
+</body>
+</html>

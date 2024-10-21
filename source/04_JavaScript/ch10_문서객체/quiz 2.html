@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <style>
+        div{
+            width:300px; 
+            margin:0 auto; 
+            border:1px solid blue; 
+            text-align:center;
+        }
+    </style>
+    <script>
+        var url = ["http://www.naver.com", 
+                "http://www.daum.net", 
+                "http://www.google.com", 
+                "http://www.youtube.com"
+        ];
+        const go = urlIdx => location.herf = url[urlIdx]; // sol 1
+        // function go(urlIdx){
+        //     location.herf = url[urlIdx];
+        // } // sol 2
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <h3>quiz2. 메뉴</h3>
+        <button onclick="go(0)">네이버</button>
+        <button onclick="go(1)">다음</button>
+        <button onclick="go(2)">구글</button>
+        <button onclick="go(3)">유튜브</button>
+    </div>
+</body>
+</html>

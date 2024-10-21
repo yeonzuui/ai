@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <style>
+        span{color:red;}
+    </style>
+    <script>
+        var title, clock, btn;
+        var timerId;
+        var toggle = 0; // 타이머 구동 상태면 0, 타이머 중지 상태면 1
+
+        window.onload = () => {
+            title = document.getElementById('title');
+            title.innerHTML = '날짜와 <span>시간</span>';
+            clock = document.getElementById('clock');
+            clock.innerHTML = new Date().toLocaleString();
+            timerId = setInterval(() =>{
+                clock.innerHTML = new Date().toLocaleString();
+            }, 1000);
+        }; // 리스너 함수
+        const toggleFunction = () => {
+            if(toggle ==0){ // 타이머 중지
+                clearInterval(timerId);
+                toggle = 1;
+                btn = document.getElementById('btn');
+                btn.innerHTML = '타이머 중지됨';
+            }else if(toggle==1){ // 타이머 재가동
+                timerId = setInterval(function(){
+                    clock.innerHTML = new Date().toLocaleString();
+                }, 1000);
+                toggle = 0;
+                btn.innerHTML = '타이머 재가동됨';
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1 id="title">title</h1>
+    <h1 id="clock">날짜와 시간</h1>
+    <button id="btn" onclick="toggleFunction()">타이머 가동 중</button>
+</body>
+</html>
