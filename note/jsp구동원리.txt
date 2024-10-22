@@ -1,0 +1,14 @@
+hello.java -> hello.class -> 실행
+
+<jsp> 동작원리 실행 how?
+브라우저에서 http://localhost:8090/context-root/ex1_hello.jsp
+브라우저에서 http://localhost:8090/ch02_semiJSP/ex1_hello.jsp
+
+source폴더 (실행안함)
+D:\ai\source\05_JSP\ch02_semiJSP/webapp/ex1_hello.jsp
+
+- 실행폴더
+05_JSP\ch02_semiJSP/webapp/ex1_hello.jsp  이거 통째로 tomcat에 옮김 
+D:\ai\IDE\apache-tomcat-10.1.31\wtpwebapps\ch02_semiJSP\ex1_hello.jsp
+
+-jsp파일을 servlet(java)파일로 바꾸는 작업(컴파일 가능한 java)

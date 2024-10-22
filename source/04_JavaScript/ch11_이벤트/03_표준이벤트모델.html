@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        window.onload = () => {
+            var h1 = document.querySelector('h1#h');
+            // addEventListener: event랑 listener 함수 pair
+            // this.유효하지 않음
+            h1.addEventListener('click', () => {
+                alert('click 하셨군');
+                h1.innerHTML += '★';
+            });
+        };
+    </script>
+</head>
+<body>
+    <h1 id="h">클릭해봐</h1>
+</body>
+</html>
