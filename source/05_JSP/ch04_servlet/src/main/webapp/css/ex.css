@@ -1,0 +1,10 @@
+@charset "UTF-8";
+body{
+	background-color: lightyellow;
+}
+h1, 
+h2,
+h4{
+	text-align: center;
+	color: plum;
+}

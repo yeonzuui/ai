@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link href="css/ex.css" rel="stylesheet">
+</head>
+<body>
+				 <!-- http://localhost:8090/ch03_semiServlet/Ex1.html-->
+	<!--inline 성질의 태그는 GET 방식으로 request-->
+	<p><a href="http://localhost:8090/ch03_semiServlet/HelloWorld">HelloWorld서블릿가기(GET)</a></p>
+	<p><a href="/ch03_semiServlet/HelloWorld">HelloWorld서블릿가기(GET)</a></p>
+	<p><a href="HelloWorld">HelloWorld서블릿가기(GET)</a></p>
+	<p><button onclick="location.href='HelloWorld'">HelloWorld서블릿(GET)</button></p>
+	<!--form 태그는 method 방식에 따라 달라짐-->
+	<p>
+		<form action="HelloWorld" method="get">
+			<input type="submit" value="HelloWorld서블릿(GET)">
+		</form>
+	</p>
+	<p>
+		<form action="HelloWorld" method="post">
+			<input type="submit" value="HelloWorld서블릿(POST)">
+		</form>
+	</p>
+</body>
+</html>
