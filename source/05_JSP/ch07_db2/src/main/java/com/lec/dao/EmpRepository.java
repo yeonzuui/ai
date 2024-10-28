@@ -3,6 +3,11 @@ package com.lec.dao;
 import java.sql.*;
 import java.util.ArrayList;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+
 import com.lec.dto.Emp;
 
 // Emp_DAO(함수 3개)
@@ -18,12 +23,19 @@ public class EmpRepository {
 		return INSTANCE;
 	}
 	// Constructor
-	public EmpRepository() {
+	private EmpRepository() {}
+	// 커넥션풀
+	private Connection getConnection() throws SQLException { // 모든 dao에 공통적으로 들어감
+		Connection conn = null;
 		try {
-			Class.forName(driver);
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			Context ctx = new InitialContext();
+			DataSource ds = (DataSource) ctx.lookup("java:comp/env/jdbc/Oracle11g"); // 커넥션풀 name
+			conn = ds.getConnection();
+		} catch (NamingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+		return conn;		
 	}
 	
 	// 1. SELECT * FROM EMP 수행결과 return
@@ -34,7 +46,8 @@ public class EmpRepository {
 		ResultSet  rs   = null;
 		String query = "SELECT * FROM EMP";
 		try {
-			conn = DriverManager.getConnection(url, uid, upw);
+			// conn = DriverManager.getConnection(url, uid, upw);
+			conn = getConnection();
 			stmt = conn.createStatement();
 			rs   = stmt.executeQuery(query);
 			while(rs.next()) {
@@ -72,7 +85,8 @@ public class EmpRepository {
 				+ "    FROM EMP E, DEPT D"
 				+ "    WHERE E.DEPTNO LIKE '%' || ? AND E.DEPTNO = D.DEPTNO";
 		try {
-			conn = DriverManager.getConnection(url, uid, upw);
+			//conn = DriverManager.getConnection(url, uid, upw);
+			conn = getConnection();
 			pstmt = conn.prepareStatement(query);
 			pstmt.setString(1, deptnoStr); // ? 채우기 
 			rs = pstmt.executeQuery();
@@ -113,7 +127,8 @@ public class EmpRepository {
 				+ "    FROM EMP E, DEPT D"
 				+ "    WHERE E.DEPTNO = D.DEPTNO AND ENAME LIKE '%'|| TRIM(UPPER(?)) ||'%'";
 		try {
-			conn = DriverManager.getConnection(url, uid, upw);
+			//conn = DriverManager.getConnection(url, uid, upw);
+			conn = getConnection();
 			pstmt = conn.prepareStatement(query);
 			pstmt.setString(1, searchName); // ? 채우기 
 			rs = pstmt.executeQuery();
