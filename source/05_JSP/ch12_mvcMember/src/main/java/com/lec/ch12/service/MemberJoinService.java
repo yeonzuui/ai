@@ -27,15 +27,15 @@ public class MemberJoinService implements Service {
 		MemberRepository repository = MemberRepository.getInstance();
 		if(repository.getCountMember(id)==MemberRepository.MEMBER_NONEXISTENT) {
 			int insertResult = repository.insertMember(newMember); // 회원가입
-			request.setAttribute("insertResult", insertResult); // 1. 방법
-			if(insertResult==MemberRepository.SUCCESS) {
+			request.setAttribute("insertResult", insertResult); // sol 1 
+			if(insertResult==MemberRepository.SUCCESS) { // sol 2
 				request.setAttribute("insertMsg", "가입성공");
 			}else {
 				request.setAttribute("insertMsg", "가입실패");
-			}
+			}// if - 가입 성공 여부
 		}else {
-			
-		}
+			request.setAttribute("memberExistentMsg", "중복된 ID는 가입불가합니다");
+		}// id - ID 중복 여부
 	}
 
 }
