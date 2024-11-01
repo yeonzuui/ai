@@ -18,7 +18,6 @@
 		<tr><th>전화</th><td>${person.tel }</td></tr>
 		<tr><th>주소</th><td>${person.address }</td></tr>
 		<tr><th>생년월일</th><td>${person.birth }</td></tr>
-		<tr><th>주소</th><td>${person.address }</td></tr>
 		<tr>
 			<th>메모</th>
 			<td>
@@ -33,9 +32,10 @@
 		</tr>
 		<tr>
 			<td colspan="2">
-				<button onclick="location='${conPath}/update.do?id=${param.id }'">수정</button>
-				<button onclick="location='${conPath}/delete.do?id=${person.id }'">삭제</button>
-				<button onclick="location='${conPath}/list.do'">목록</button>
+				<button onclick="location='${conPath}/update.do?id=${param.id }&pageNum=${param.pageNum }'">수정</button>
+				<button onclick="location='${conPath}/update2.do?id=${param.id }&pageNum=${param.pageNum }'">수정2</button>
+				<button onclick="location='${conPath}/delete.do?id=${person.id }&pageNum=${param.pageNum }'">삭제</button>
+				<button onclick="location='${conPath}/list.do?pageNum=${param.pageNum }'">목록</button>
 				<button onclick="location='${conPath}/insert.do'">추가</button>
 			</td>
 		</tr>

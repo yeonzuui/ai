@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script>
+		$(document).ready(function(){ // 화살표 함수 불가, = window.onload
+			// jQuery 문법: $('선택자').함수();
+			$('p#p1').click(function(){ // 콜백 함수
+				// 'p#p1'를 클릭이벤트 발생 시 구현
+				$(this).html('<b>태그 내용 바뀜</b>');
+				// $(this).text('<b>태그 내용 바뀜</b>');
+				$(this).css('background-color', 'yellow').css('color', 'red');
+			});
+		}); 
+	</script>
+</head>
+<body>
+	<p id="p1">p태그 하나</p>
+</body>
+</html>

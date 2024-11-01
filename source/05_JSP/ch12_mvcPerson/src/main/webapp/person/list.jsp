@@ -32,7 +32,7 @@
 				<tr><td colspan="4">해당 데이터가 없습니다</td></tr>
 			</c:if>
 			<c:forEach var="person" items="${personList }">
-				<tr onclick="location.href='${conPath}/info.do?id=${person.id }'">
+				<tr onclick="location.href='${conPath}/info.do?id=${person.id }&pageNum=${pageNum }'">
 					<td>${person.id }</td>
 					<td>${person.name }</td>
 					<td>${person.tel}</td>
@@ -43,5 +43,25 @@
 			</c:forEach>
 		</table>
 	</form>
+	<%-- BLOCKSIZE: ${BLOCKSIZE }<br>
+	startPage: ${startPage }<br>
+	endPage: ${endPage }<br>
+	pageNum: ${pageNum }<br> --%>
+	<div class="paging">
+		<c:if test="${startPage > BLOCKSIZE}">
+			<a href="${conPath }/list.do?pageNum=${startPage-1}">[ 이전 ]</a>
+		</c:if>
+		<c:forEach var="i" begin="${startPage }" end="${endPage }">
+			<c:if test="${pageNum eq i }">
+				<b>[ ${i } ]</b>
+			</c:if>
+			<c:if test="${pageNum != i }">
+				<a href="${conPath }/list.do?pageNum=${i}"> [ ${i } ]</a> 
+			</c:if>
+		</c:forEach>
+		<c:if test="${endPage < pageCnt }">
+			<a href="${conPath }/list.do?pageNum=${endPage+1}">[ 다음 ]</a>
+		</c:if>
+	</div>
 </body>
 </html>

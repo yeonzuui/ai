@@ -90,7 +90,7 @@ public class PersonRepository {
 			pstmt.setInt(2, endRow);
 			rs    = pstmt.executeQuery();
 			while(rs.next()) {
-				int 	  id     = rs.getInt("id");
+				int 	  id      = rs.getInt("id");
 				String    name    = rs.getString("name");
 				String    tel     = rs.getString("tel");
 				String    address = rs.getString("address");
