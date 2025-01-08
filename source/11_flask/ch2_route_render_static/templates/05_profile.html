@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href = "{{url_for('static', filename = 'file.css')}}"
+          rel  = "stylesheet">
+    <title>Profile</title>
+</head>
+<body>
+  <!--name, age 받을 것이므로 사용 가능-->
+  <h1>{{ name }}님 연습 화면(Jinja2 템플릿 이용)</h1>
+  <table>
+    <thead>
+      <tr><th>이름</th><th>나이</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>{{name}} </td><td>{{age}}</td></tr>
+    </tbody>
+  </table>
+</body>
+</html>
