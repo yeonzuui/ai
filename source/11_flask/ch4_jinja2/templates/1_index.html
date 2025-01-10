@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href = "{{ url_for('static', filename = 'file.css') }}"
+          rel  = "stylesheet">
+    <title>Title</title>
+</head>
+<body>
+  <!--jinja2 문법에서 하이픈은 filter 처리하는 기능, or 연산자로 사용 불가-->
+  <!--이름 길이가 0이 아니고, 짝수인 경우-->
+  {% if length != 0 and length % 2 == 0 %}
+    <h1>짝수 글자수 ( {{length}} ): {{name | upper}}님 환영합니다</h1>
+  <!--이름 길이가 홀수인 경우-->
+  {% elif length % 2 == 1 %}
+    <h1>홀수 글자수 ( {{length}} ): {{name.lower()}}님 환영합니다</h1>
+  <!--이름 길이가 0인 경우(이름이 None인 경우)-->
+  {% else %}
+    <h1>입력된 이름이 없습니다</h1>
+  {% endif %}
+  <form action = "/" method = "post">
+    추가될 이름 <input type = "text" name = "name">
+    <input type = "submit" value = "추가">
+  </form>
+  {% if names %}
+    <ul>
+      {% for n in names %}
+        {% if loop.last %}
+          <li><b>{{loop.index}}/{{names | length}}. {{n}}</b></li>
+        {% else %}
+          <li>{{loop.index}}/{{names | length}}. {{n}}</li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>추가된 이름이 없습니다</p>
+  {% endif %}
+  <h2>가격: {{ '{:,}'.format(price)}}</h2> <!--3자리마다 알아서 콤마-->
+</body>
+</html>
