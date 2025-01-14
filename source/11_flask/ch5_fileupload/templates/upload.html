@@ -12,7 +12,9 @@
                      width = "100">
                 <!-- enctype = "multipart/form-data": 파일 첨부 가능 -->
                 <form action = "/" method = "post" enctype = "multipart/form-data">
-                    <input type = "file" name = "file">
+                    <!-- <input type = "file" name = "file">-->
+                    {{ form.csrf_token() }} <!-- csrf 공격 방지 -->
+                    {{ form.files() }}      <!-- form 객체로부터 파일 받음-->
                     <input type = "submit" class = "btn btn-primary btn-lg">
                 </form>
             </div>
