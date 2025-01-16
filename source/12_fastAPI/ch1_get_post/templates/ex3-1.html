@@ -1,0 +1,12 @@
+<!--상속-->
+{% extends "base.html" %}
+
+<!--블록 재정의-->
+{% block content %}
+  <h1>WELCOME, FastAPI! (비동기 방식의 웹 프로그램)</h1>
+  <button onclick="location.href='/html2'">두 번째 페이지</button>
+  <a href="/html2">두 번째 페이지</a>
+  <form action="/html2">
+    <input type="submit" value="두 번째 페이지">
+  </form>
+{% endblock %}
