@@ -1,0 +1,57 @@
+<!-- base.html로부터 상속 -->
+{% extends "base.html" %}
+{% block content %}
+<body>
+    <!-- bootstrap jumbotron demo -->
+    <div class="container py-4">
+        <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+            <div class="text-center container-fluid py-5">
+                <h1 class="display-5 fw-bold">파일 업로드</h1>
+                <hr style="width:100%; color:red;">
+                <!--FastAPI는 path로 써야 해-->
+                <img src="{{ url_for('static', path = 'img/upload.png') }}"
+                     width = "100">
+                <!-- enctype = "multipart/form-data": 파일 첨부 가능 -->
+                <form action = "/upload" method = "post" enctype = "multipart/form-data">
+                     <input type = "file" name = "file">
+                    <input type = "submit" class = "btn btn-primary btn-lg">
+                </form>
+            </div>
+            <table class="table table-info">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col" colspan="2">파일명</th>
+                  <th scope="col">생성</th>
+                  <th scope="col">수정</th>
+                  <th scope="col">크기</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% if infos %}
+                    {% for info in infos %}
+                        <tr>
+                            <!--loop 객체 사용 가능-->
+                            <th scope="row">{{ loop.index }}</th>
+                            <td onclick="location.href='/download/{{ info['name'] }}'">
+                                {{ info['name'] }}
+                            </td>
+                            <!--node.js나 FastAPI는 삭제를 DELETE 방식으로 전달, 아래는 GET 방식임-->
+                            <td>
+                                <a href="/del/{{ info['name'] }}">삭제</a>
+                                <!--<span>삭제</span>-->
+                            </td>
+                            <td>{{ info['create'].strftime('%Y-%m-%d %H:%M') }}</td>
+                            <td>{{ info['modify'].strftime('%Y-%m-%d %H:%M') }}</td>
+                            <td>{{ info['size'] }}</td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr><td colspan="6" class="text-center">업로드된 파일이 없습니다</td></tr>
+                {% endif %}
+              </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+{% endblock %}
