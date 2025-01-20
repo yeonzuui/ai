@@ -91,8 +91,26 @@ async def upload(request:Request,
         return RedirectResponse(url = '/',
                                 status_code = 307)
 
+# 파일 다운로드 FileResponse
+@app.get('/download/{filename}')
+async def download_file(filename):
+    return FileResponse(UPLOAD_FOLDER + filename,                # 다운받을 파일 경로
+                        media_type = 'application/actet-stream', # 브라우저에서 열지 말고 다운로드만
+                        filename = filename)                     # 생략 가능(파일 이름 지정 가능)
+
+
 # 삭제는 반드시 DELETE 방식으로 전달
-@app.get('/del/{filename}')
-async def delete(filename:str):
+
+# @app.get('/del/{filename}')
+# async def delete(filename:str):
+#     os.remove(UPLOAD_FOLDER + filename)
+#     return RedirectResponse('/')
+
+@app.delete('/del/{filename}')
+async def delete_file(filename:str):
+    # 파일이 존재하지 않으면 메세지 출력
+    if not os.path.exists(UPLOAD_FOLDER + filename):
+        return f'{filename}은 없는 파일입니다'
+    # 파일 존재하면 제거
     os.remove(UPLOAD_FOLDER + filename)
-    return RedirectResponse('/')
+    return f'{filename} 삭제 성공'

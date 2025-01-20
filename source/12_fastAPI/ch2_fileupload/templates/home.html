@@ -38,8 +38,9 @@
                             </td>
                             <!--node.js나 FastAPI는 삭제를 DELETE 방식으로 전달, 아래는 GET 방식임-->
                             <td>
-                                <a href="/del/{{ info['name'] }}">삭제</a>
-                                <!--<span>삭제</span>-->
+                                <!--<a href="/del/{{ info['name'] }}">삭제</a>-->
+                                <!--data-id: dataset에 id 부여-->
+                                <span data-id="{{ info['name'] }}">삭제</span>
                             </td>
                             <td>{{ info['create'].strftime('%Y-%m-%d %H:%M') }}</td>
                             <td>{{ info['modify'].strftime('%Y-%m-%d %H:%M') }}</td>
@@ -53,5 +54,31 @@
             </table>
         </div>
     </div>
+    <!--페이지는 바뀌지 않고 삭제 브라우저만 요청-->
+    <!--jquery 문법 사용할 수 있게 cdn 가져오기 https://releases.jquery.com/-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            // e: 클릭된 element
+            $('span').click(function(e){
+                // F12 - console에서 data-id 확인용
+                // console.log(e);
+                filename = e.target.dataset.id;
+                // DELETE 방식으로 특정 경로 요청
+                // fetch 수행하고 response 결과 받기
+                fetch('/del/' + filename,
+                      {method: 'DELETE'})
+                      .then(response => {
+                        // 서버의 응답 내용을 text로 return
+                        return response.text();
+                      })
+                      .then(data => {
+                        alert(data);
+                      });
+                // 현재 페이지('/')를 다시 load
+                location.reload()
+            });
+        });
+    </script>
 </body>
 {% endblock %}
