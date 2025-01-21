@@ -44,15 +44,13 @@ app.mount('/static',
 templates = Jinja2Templates(directory = os.path.join(BASE_DIR,
                                                      '../templates'))
 # cd src에서 실행
-@app.get('/')
-async def health_check_handler():
-    return {'status':'ok'}
+
 
 todo_data = {
     1:{
         'id'       : 1,
         'contents' :'딥러닝 공부',
-        'is_done'  : False
+        'is_done'  : True
     },
     2:{
         'id'       : 2,
@@ -70,13 +68,57 @@ todo_data = {
         'is_done'  : False
     }
 }
-
+@app.get('/')
+# async def health_check_handler():
+#     return {'status':'ok'}
 # /todos(할 일 1부터 출력) 또는 /todos?order=desc(할 일 역순으로 출력)
 @app.get('/todos')
-async def get_todos_handler(order:str | None = None):
+@app.post('/todos')
+async def get_todos_handler(request:Request,
+                            order:str | None = None):
     # dict → list로 변환
     todos = list(todo_data.values())
     # order가 오름차순이면 끝에서부터 -1씩 출력(슬라이싱 이용)
     if order and order.upper() == 'DESC':
         todos = todos[::-1]
-    return todos
+    next_id = max(todo_data.keys()) + 1
+    return templates.TemplateResponse('todos.html',  # todo 목록, todo 입력 form
+                                      {'request': request,
+                                       'todos': todos,
+                                       'next_id': next_id,
+                                       'order':order.upper() if order else ''})
+
+# 상세보기 페이지
+@app.get('/todos/{todo_id}')
+# HTML로 rendering
+async def get_todo_detail_handler(request:Request,
+                                  todo_id:int):
+    # 없는 id 들어오면 빈 Dict
+    todo = todo_data.get(todo_id, {}) # todo_data[todo_id]
+    return templates.TemplateResponse('todo.html',
+                                      {'request': request,
+                                       'todo': todo})
+
+# 할 일 등록 페이지
+@app.post('/create')
+async def create_todo_handler(todo:ToDoRequest = Form()):
+    # print('form 태그로부터 입력된 todo: ', todo)
+    todo_data[todo.id] = todo.dict()
+    # {'id'      : todo.id,
+    #  'contents': todo.contents,
+    #  'is_done' : todo.is_done}
+    # todos를 POST 방식으로 전송
+    return RedirectResponse('/todos')
+
+# 삭제
+@app.delete('/delete/{todo_id}', status_code = 200)
+async def delete_todo_handler(todo_id:int):
+    # todo_id가 없는 key 값일 경우 Error -> 불안정함
+    # del todo_data[todo_id]
+
+    # todo_id가 없는 key 값일 경우 None
+    todo = todo_data.pop(todo_id, None)
+
+    if todo:
+        return f'{todo_id}번 todo 삭제 성공'
+    return f'{todo_id}는 등록되지 않는 todo여서 삭제 실패'

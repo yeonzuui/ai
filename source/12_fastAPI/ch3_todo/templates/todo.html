@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container py-4 text-center">
+    <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+      <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">
+          <!--jinja2 문법에서는 빈 Dict에 대해 아래처럼 코드 짜도 에러나지 않음-->
+          {{ todo['id'] ~' 번 상세보기' if todo else '데이터가 없어요' }}
+        </h1>
+      <div>
+      <table class="table table-info">
+          <thead>
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">할일</th>
+              <th scope="col">수행여부</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!--todo가 빈 Dict가 아니면-->
+            {% if todo %}
+              <tr>
+                <th scope="row">{{ todo['id'] }}</th>
+                <td> {{ todo['contents'] }}</td>
+                <td>
+                  {{ '완료' if todo['is_done']  else '미완료' }}
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3" class="text-center">
+                  <!--목록과 수정페이지는 GET 방식, 삭제는 DELETE 방식-->
+                  <button onclick="location='/todos/'" class="btn btn-primary">목록</button>
+                  <button onclick="location='/update/{{ todo['id'] }}'"
+                          class="btn btn-warning">수정</button>
+                  <button class="delete btn btn-danger">삭제</button>
+                </td>
+              </tr>
+            {% else %}
+              <tr>
+                <td colspan="3" class="text-center">해당 id의 todo는 없습니다</td>
+              </tr>
+            {% endif %}
+          </tbody>
+      </table>
+    <div>
+<div>
+<!--jquery cdn 가져오기-->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+  $(function(){
+    // delete 버튼 누르면 함수 수행
+    $('button.delete').click(function(){
+      // DELETE 방식으로 경로 요청
+      fetch('/delete/' + {{ todo['id'] }}, {method:'DELETE'})
+      // 함수 안에 response -> 응답 결과 받기 -> 화살표 함수로 변경
+      .then(response => {
+        // response.ok가 False 이면 실패 메세지 출력
+        if(!response.ok){
+          alert(`실패: ${response.status}`);
+          return;
+        }
+        // 서버의 return 응답 내용을 text로 return
+        return response.text();
+      })
+      .then(data => {
+        alert(`${data}`);
+        // (response.ok가 True인 경우) 서버에서 받은 내용을 alert 출력 후 목록페이지로
+        location.href = '/todos';
+      });
+    });
+  });
+</script>
+{% endblock %}
