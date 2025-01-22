@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container py-4 text-center">
+    <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+      <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">
+          <!--jinja2 문법에서는 빈 Dict에 대해 아래처럼 코드 짜도 에러나지 않음-->
+          {{ todo['id'] ~'번 수정하기' if todo else '데이터가 없어요' }}
+        </h1>
+      <div>
+      <table class="table table-info">
+          <tbody>
+            <!--todo가 빈 Dict가 아니면-->
+            {% if todo %}
+              <tr>
+                <td>
+                  <!--할 일, 수행여부 수정하는 input태그 만들기-->
+                  <!--각 id에 contents, is_done 부여-->
+                  <div class="input-group mb-3">
+                    <span class="input-group-text">할 일</span>
+                    <input type="text" class="form-control" id="contents"
+                           value="{{ todo['contents'] }}">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text">수행</span>
+                    <!--수행여부는 완료/미완료 선택가능한 select로 변경(전달은 True/False로)-->
+                    <select class="form-select form-select-sm" id="is_done">
+                      <!--초기화면은 완료 상태면 완료로, 미완료 상태면 미완료로 선택되어 있어야 함-->
+                      <option value="True"
+                        {% if todo['is_done'] %}
+                          selected="selected"
+                        {% endif %}
+                      >완료</option>
+                      <option value="False"
+                        {% if not todo['is_done'] %}
+                          selected="selected"
+                        {% endif %}
+                      >미완료</option>
+                    </select>
+                  </div>
+                  <!--수정 버튼 누르면 contents와 is_done 가져와서 PUT이나 PATCH 방식으로 전달-->
+                  <div class="input-group mb-3">
+                    <button class="btn btn-success form-control">수정</button>
+                  </div>
+                </td>
+              </tr>
+            {% else %}
+              <tr>
+                <td colspan="3" class="text-center">해당 id의 todo는 없습니다</td>
+              </tr>
+            {% endif %}
+          </tbody>
+      </table>
+    <div>
+<div>
+<!--jquery cdn 가져오기-->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+  $(function(){
+    // 수정버튼 누르면 함수 수행
+    $('button').click(function(){
+      // 수정된 [할 일]과 [수행여부]의 값을 id를 통해 가져오기
+      const id = '{{ todo['id'] | default('') }}';
+      // encodeURIComponent(): 한글 인코딩하여 URL에 쓸 수 있도록 변환
+      const contents = encodeURIComponent($('#contents').val());
+      const is_done  = encodeURIComponent($('#is_done').val());
+      // alert(id + contents + is_done)
+      // /update/2/할일수정됨/False
+      // 응답 결과(응답 여부, 상태 코드) 받는 화살표 함수
+      fetch('/update/' + id + '/' + contents + '/' + is_done, {method: 'PATCH'})
+      .then(response => {
+        // alert(`${response.ok} - ${response.status}`);
+        // 응답 여부 False면 상태 코드 출력
+        if (!response.ok){
+          alert(`오류 code: ${response.status}`);
+          return;
+        }
+        // 응답 여부 True면 내용을 text로 return
+        return response.text();
+      })
+      .then(data => {
+        alert(`${data}`);
+        // 수정 후 상세보기 페이지로
+        location.href = '/todos/' + id;
+      });
+    });
+  });
+</script>
+{% endblock %}

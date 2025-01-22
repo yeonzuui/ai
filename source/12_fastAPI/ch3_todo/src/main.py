@@ -1,3 +1,7 @@
+# install한 라이브러리 목록 파일로 만들기
+# cmd 창에서 [pip freeze > requirements.txt]
+# 파일명은 관례적으로 requirements 사용
+
 # src → 소스 루트
 # pip install fastapi
 # pip install uvicorn
@@ -6,7 +10,7 @@
 
 # template 사용
 from fastapi import FastAPI, Request
-# 특정 요청경로에서 template로 갈 핸들러 함수
+# 특정 요청경로에서 template로 갈 handler 함수
 from fastapi import Request
 # static mounting
 from fastapi.staticfiles import StaticFiles
@@ -89,15 +93,29 @@ async def get_todos_handler(request:Request,
                                        'order':order.upper() if order else ''})
 
 # 상세보기 페이지
-@app.get('/todos/{todo_id}')
+
+@app.get('/todos/{todo_id}', status_code = 200)
 # HTML로 rendering
 async def get_todo_detail_handler(request:Request,
                                   todo_id:int):
     # 없는 id 들어오면 빈 Dict
     todo = todo_data.get(todo_id, {}) # todo_data[todo_id]
-    return templates.TemplateResponse('todo.html',
-                                      {'request': request,
-                                       'todo': todo})
+
+    # 없는 id 조회 시 404 예외 발생
+    if todo:
+        return templates.TemplateResponse('todo.html',
+                                         {'request': request,
+                                           'todo'   : todo})
+    raise HTTPException(status_code = 404,
+                        detail      = '없는 ID 입니다.')
+
+# 404 에러에 대한 예외 페이지 설계
+# HTML로 rendering
+@app.exception_handler(404)
+def error_handler(request:Request, exe:HTTPException):
+    return templates.TemplateResponse('page_not_found.html',
+                                      {'request':request},
+                                       status_code = 404)
 
 # 할 일 등록 페이지
 @app.post('/create')
@@ -121,4 +139,33 @@ async def delete_todo_handler(todo_id:int):
 
     if todo:
         return f'{todo_id}번 todo 삭제 성공'
-    return f'{todo_id}는 등록되지 않는 todo여서 삭제 실패'
+    raise HTTPException(status_code = 404,
+                        detail      = '예외 페이지로 이동합니다')
+
+
+
+@app.get('/update/{todo_id}', status_code = 200)
+async def get_updatetodo_handler(request:Request, todo_id:int):
+    # todo_id가 없는 key 값일 경우 None
+    todo = todo_data.get(todo_id)
+    # update.html로 rendering
+    if todo:
+        return templates.TemplateResponse('update.html',
+                                          {'request':request,
+                                           'todo'   :todo})
+    raise HTTPException(status_code = 404, 
+                        detail      = '예외 페이지로 가서 이 detail 메세지는 출력 안 함')
+
+# 수정
+# HTML로 return 할 필요 없음
+@app.patch('/update/{id}/{contents}/{is_done}')
+async def update_todo_handler(id:int, contents:str, is_done:bool):
+    # 수행될 딕셔너리
+    # todo 데이터 변경하지 않기 위해 .copy()
+    todo = todo_data.get(id).copy()
+    if todo:
+        todo['contents'] = contents
+        todo['is_done']  = is_done
+        return f'{id}번 {contents} 수정 완료'
+    raise HTTPException(status_code = 404,
+                        detail      = '예외 페이지로 가서 이 detail 메세지는 출력 안 함')
