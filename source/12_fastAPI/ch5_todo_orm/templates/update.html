@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container py-4 text-center">
+  <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+    <div class="container-fluid py-5">
+      <h1 class="display-5 fw-bold">
+        {{ todo['id'] ~ '번 수정하기' if todo else '데이터가 없어요'}}
+      </h1>
+    </div>
+    <table class="table table-info">
+      <tbody>
+        {% if todo %}
+          <tr>
+            <td>
+              <div class="input-group mb-3">
+                <span class="input-group-text">할일</span>
+                <input type="text" class="form-control" id="contents"
+                        value="{{ todo['contents'] }}">
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text">수행</span>
+                <select class="form-select form-select-sm" id="is_done">
+                  <option value="True"
+                    {% if todo['is_done'] %}
+                      selected="selected"
+                    {% endif %}
+                   >완료</option>
+                  <option value="False"
+                    {% if not todo['is_done'] %}
+                      selected="selected"
+                    {% endif %}
+                  >미완료</option>
+                </select>
+              </div>
+              <div class="input-group mb-3">
+                <button class="btn btn-success form-control">수정</button>
+              </div>
+            </td>
+          </tr>
+        {% else %}
+          <tr>
+            <td class="text-center">해당 id의 todo는 없습니다</td>
+          </tr>
+        {% endif %}
+      </tbody>
+    </table>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+  $(function(){
+    $('button').click(function(){
+      const id = '{{ todo['id'] | default('') }}' ;
+      const contents = encodeURIComponent($('#contents').val());
+      const is_done  = $('#is_done').val();
+      //alert(id + contents + is_done);
+      // /update/2/할일바꾼거/False
+      fetch('/update/'+id+'/'+contents+'/'+is_done, {method : 'PATCH'})
+      .then(response=>{
+        //alert(`${response.ok} - ${response.status}`);
+        if (!response.ok){
+          alert(`오류 code : ${response.status}`);
+          return;
+        }
+        return response.text(); // 서버의 응답 내용을 text로 return
+       })
+       .then(data => {
+        alert(`${data}`);
+        location.href = '/todos/'+id; // 수정 후 상세보기 페이지로
+       });
+     });
+  });
+</script>
+{% endblock %}
+
+
+
+
+
+
+
