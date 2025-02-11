@@ -1,5 +1,5 @@
 """
-URL configuration for ch01 project.
+URL configuration for ch02 project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.1/topics/http/urls/
@@ -16,9 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from home import views # ctrl + views 클릭으로 views.py 파일에 함수 생성
+from home import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", views.home, name = "home"), # name은 경로 이름
+    path("", views.index, name = "index"),
 ]
