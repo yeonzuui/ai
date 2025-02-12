@@ -15,10 +15,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from home import views
+# views에 핸들러 함수 생성
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.index, name = "index"),
+    path("test/", views.test, name = "test"),
+    # Type Hint는 기본적으로 str, 꺾쇠 괄호 사용
+    path("showId/<int:id>/", views.showIntId, name = 'showIntId'),
+    path("showId/<str:id>/", views.showStrId, name = 'showStrId'),
+    path("wordcnt/", include("wordcnt.urls")), # wordcnt.urls가 제공
 ]
