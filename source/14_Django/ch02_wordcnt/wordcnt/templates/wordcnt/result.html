@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}결과 페이지{% endblock %}
+
+{% block content %}
+  <!--바로 가기-->
+  <button class="btn btn-primary btn-lg" onclick="location = '{% url 'index' %}'">처음 페이지로</button>
+  <button class="btn btn-primary btn-lg" onclick="location = '{% url 'wordcnt:wordinput' %}'">글자 입력</button>
+  <button class="btn btn-primary btn-lg" onclick="location = '{% url 'wordcnt:about' %}'">도움말</button>
+  <br>
+  <!--결과 출력-->
+  <button type="button" class="btn btn-primary">
+    단어수 <span class="badge bg-secondary">{{ wordcnt }}</span>
+  </button>
+  <hr>
+  <h1>입력한 text: {{ fulltxt }}</h1>
+  <h1>글자수     : {{ str_length }}</h1>
+  <h1>단어수     : {{ wordcnt }}</h1>
+  {# 주석 #}
+  {# fulltxt가 빈 스트링일 경우와 아닐 경우 구분 #}
+  {% if dict %}
+    <h2>단어와 출현 빈도는 다음과 같습니다</h2>
+    {# dict은 tuple list, 예시) [('홍', 2), ('아자', 1)] #}
+    {% for word, cnt in dict %}
+      <h2><span>{{ word }}</span> : {{ cnt }}</h2>
+    {% endfor %}
+  {% else %}
+    <h2>입력된 text가 없습니다</h2>
+  {% endif %}
+{% endblock %}

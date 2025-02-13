@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}도움말{% endblock %}
+
+{% block content %}
+  <h1>도움말 페이지</h1>
+  <p>입력한 글자수와 단어수를 카운트하는 기능입니다</p>
+  <a href="{% url 'wordcnt:wordinput' %}">글자입력 페이지</a> <!--많이 쓰는 방식-->
+  <a href="/wordcnt">글자입력 페이지</a>
+  <br>
+  <a href="{% url 'index' %}">처음으로</a>
+  <a href="/">처음으로</a>
+
+
+
+{% endblock %}
+<!--홍길동 홍길동 화이팅 아자 아자 아자-->
