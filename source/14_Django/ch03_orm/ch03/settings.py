@@ -30,7 +30,9 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+# [python manage.py migrate] 사용자 및 그룹 테이블 생성
+# db.sqllite3 파일 생성됨
+# [python manage.py startapp 앱이름] 명령어 실행 후 밑에 추가하여 앱 등록
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -38,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "student" # 앱 등록
 ]
 
 MIDDLEWARE = [
